@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace BL
 {
-    internal class BookBL : IBookBL
+    public  class BookBL : IBookBL
     {
         private BookDao bookDao = new BookDao();
 

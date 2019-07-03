@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace BL
 {
-    internal class ReaderBL : IReaderBL
+    public class ReaderBL : IReaderBL
     {
         private ReaderDao readerDao = new ReaderDao();
 

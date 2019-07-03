@@ -1,4 +1,5 @@
-﻿using DAL;
+﻿using BL;
+using Entities;
 
 namespace ConsoleApp
 {
@@ -7,7 +8,7 @@ namespace ConsoleApp
         private static void Main(string[] args)
         {
             System.Console.WriteLine();
-            ReaderDao rd = new ReaderDao();
+            ReaderBL rd = new ReaderBL();
             foreach (var i in rd.GetAllReaders())
             {
                 System.Console.WriteLine(i);

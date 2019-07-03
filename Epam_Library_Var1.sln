@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29020.237
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam_Library_Var1", "Epam_Library_Var1.csproj", "{5608F301-A5EB-4D33-88AC-9F619231DA05}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DAL", "DAL", "{FC57312C-D7D3-41F4-B818-152AD65463F6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{FE9835E7-8455-4A72-84C7-B71198442AD0}"
@@ -31,10 +29,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{5608F301-A5EB-4D33-88AC-9F619231DA05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5608F301-A5EB-4D33-88AC-9F619231DA05}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5608F301-A5EB-4D33-88AC-9F619231DA05}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5608F301-A5EB-4D33-88AC-9F619231DA05}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FE9835E7-8455-4A72-84C7-B71198442AD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FE9835E7-8455-4A72-84C7-B71198442AD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE9835E7-8455-4A72-84C7-B71198442AD0}.Release|Any CPU.ActiveCfg = Release|Any CPU

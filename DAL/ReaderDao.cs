@@ -1,6 +1,7 @@
 ﻿using DAL.Interface;
 using Entities;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -8,7 +9,7 @@ namespace DAL
 {
     public class ReaderDao : IReaderDao
     {
-        private string _connectionString = @"Data Source=TOP-PC\SQLEXPRESS;Initial Catalog = Library; Integrated Security = True";
+        private string _connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
 
         public void Add(Reader reader)
         {

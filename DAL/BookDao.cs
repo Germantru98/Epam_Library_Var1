@@ -2,6 +2,7 @@
 using Entities;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -9,7 +10,7 @@ namespace DAL
 {
     public class BookDao : IBookDao
     {
-        private string _connectionString = @"Data Source=TOP-PC\SQLEXPRESS;Initial Catalog = Library; Integrated Security = True";
+        private string _connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
 
         public void Add(Book book)
         {

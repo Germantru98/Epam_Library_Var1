@@ -21,6 +21,8 @@ namespace DAL
                 cmd.Parameters.AddWithValue(@"Name", reader.Name);
                 cmd.Parameters.AddWithValue(@"Surname", reader.Surname);
                 cmd.Parameters.AddWithValue(@"Phone", reader.Phone);
+                cmd.Parameters.AddWithValue(@"Login", reader.Login);
+                cmd.Parameters.AddWithValue(@"Password", reader.Password);
 
                 var id = new SqlParameter
                 {
@@ -82,6 +84,34 @@ namespace DAL
                 cmd.Parameters.AddWithValue(@"Name", reader.Name);
                 cmd.Parameters.AddWithValue(@"Surname", reader.Surname);
                 cmd.Parameters.AddWithValue(@"Phone", reader.Phone);
+                connection.Open();
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        public void SetNewPassword(Reader reader, string newPassword)
+        {
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                var cmd = connection.CreateCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "SetNewPassword";
+                cmd.Parameters.AddWithValue(@"Reader_ID", reader.Reader_ID);
+                cmd.Parameters.AddWithValue(@"Password", newPassword);
+                connection.Open();
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        public void SetNewLogin(Reader reader, string newLogin)
+        {
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                var cmd = connection.CreateCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "SetNewLogin";
+                cmd.Parameters.AddWithValue(@"Reader_ID", reader.Reader_ID);
+                cmd.Parameters.AddWithValue(@"Login", newLogin);
                 connection.Open();
                 cmd.ExecuteNonQuery();
             }

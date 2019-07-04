@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace BL
 {
-    public  class TicketBL : ITicketBL
+    public class TicketBL : ITicketBL
     {
         private TicketDao ticketDao = new TicketDao();
 

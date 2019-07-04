@@ -28,5 +28,15 @@ namespace BL
         {
             readerDao.Update(reader);
         }
+
+        public void SetNewPassword(Reader reader, string newPassword)
+        {
+            readerDao.SetNewPassword(reader, newPassword);
+        }
+
+        public void SetNewLogin(Reader reader, string newLogin)
+        {
+            readerDao.SetNewLogin(reader, newLogin);
+        }
     }
 }

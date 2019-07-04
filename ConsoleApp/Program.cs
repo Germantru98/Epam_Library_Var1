@@ -7,8 +7,8 @@ namespace ConsoleApp
     {
         private static void Main(string[] args)
         {
-            System.Console.WriteLine();
             ReaderBL rd = new ReaderBL();
+            Reader r = new Reader("Rodion", "Gref", "89173238712");
             foreach (var i in rd.GetAllReaders())
             {
                 System.Console.WriteLine(i);

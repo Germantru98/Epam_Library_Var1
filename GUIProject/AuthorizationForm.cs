@@ -1,4 +1,5 @@
 ﻿using BL;
+using Entities;
 using System;
 using System.Windows.Forms;
 
@@ -7,6 +8,7 @@ namespace GUIProject
     public partial class AuthorizationForm : Form
     {
         private AuthorizationHandler authorization = new AuthorizationHandler();
+        private Reader _reader;
 
         public AuthorizationForm()
         {
@@ -29,10 +31,17 @@ namespace GUIProject
 
         private void SignInButton_Click(object sender, EventArgs e)
         {
+            Hide();
             if (authorization.isAuthorized(LoginTextBox.Text, PasswordTextBox.Text))
             {
-                UserForm form = new UserForm();
+                _reader = authorization.GetReaderByLogin(LoginTextBox.Text);
+                UserForm form = new UserForm(_reader);
                 form.Show();
+            }
+            else
+            {
+                MessageBox.Show("Ошибка при вводе данных");
+                Show();
             }
         }
     }

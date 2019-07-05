@@ -7,6 +7,7 @@ namespace ConsoleApp
     {
         private static void Main(string[] args)
         {
+
             ReaderBL bl = new ReaderBL();
             Console.Write("Введите логин: ");
             string login = Console.ReadLine();

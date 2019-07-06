@@ -28,5 +28,10 @@ namespace BL
         {
             ticketDao.Update(ticket);
         }
+
+        public Ticket GetTicketByID(int ticketID)
+        {
+            return ticketDao.GetTicketByID(ticketID);
+        }
     }
 }

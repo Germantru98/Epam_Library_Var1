@@ -89,5 +89,28 @@ namespace DAL
                 cmd.ExecuteNonQuery();
             }
         }
+
+        public Ticket GetTicketByID(int ticket_ID)
+        {
+            Ticket tmp = new Ticket();
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                var cmd = connection.CreateCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "GetTicketByID";
+                cmd.Parameters.AddWithValue(@"Ticket_ID", ticket_ID);
+                connection.Open();
+                var reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    tmp.Ticket_ID = (int)reader["Ticket_ID"];
+                    tmp.Reader_ID = (int)reader["Reader_ID"];
+                    tmp.Book_ID = (int)reader["Book_ID"];
+                    tmp.StartDate = (DateTime)reader["StartDate"];
+                    tmp.EndDate = (DateTime)reader["EndDate"];
+                }
+                return tmp;
+            }
+        }
     }
 }

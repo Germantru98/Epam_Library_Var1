@@ -168,7 +168,7 @@
             this.MinimumSize = new System.Drawing.Size(500, 500);
             this.Name = "SignUpForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "SignUpForm";
+            this.Text = "8";
             this.Load += new System.EventHandler(this.SignUpForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -30,18 +30,26 @@
         {
             this.UserMenu = new System.Windows.Forms.TabControl();
             this.LibraryTab = new System.Windows.Forms.TabPage();
-            this.Title = new System.Windows.Forms.RadioButton();
+            this.RefreshButton1 = new System.Windows.Forms.Button();
+            this.TitleRButton = new System.Windows.Forms.RadioButton();
             this.AuthorRButton = new System.Windows.Forms.RadioButton();
             this.SearchButton = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.ParamTextBox = new System.Windows.Forms.TextBox();
             this.AddToUserLibraryButton = new System.Windows.Forms.Button();
             this.BooksDGV = new System.Windows.Forms.DataGridView();
             this.UserLibrary = new System.Windows.Forms.TabPage();
+            this.RefreshButton = new System.Windows.Forms.Button();
             this.ExtendBookButton = new System.Windows.Forms.Button();
             this.RemoveButton = new System.Windows.Forms.Button();
             this.MyLibraryTable = new System.Windows.Forms.DataGridView();
             this.UserProfile = new System.Windows.Forms.TabPage();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.SettingsBox = new System.Windows.Forms.GroupBox();
+            this.ChangePasswordButton = new System.Windows.Forms.Button();
+            this.ChangeLoginButton = new System.Windows.Forms.Button();
+            this.ChangePhoneButton = new System.Windows.Forms.Button();
+            this.ChangeSurnameButton = new System.Windows.Forms.Button();
+            this.ChangeNameButton = new System.Windows.Forms.Button();
+            this.MainInformationBox = new System.Windows.Forms.GroupBox();
             this.PhoneInf = new System.Windows.Forms.Label();
             this.SurnameInf = new System.Windows.Forms.Label();
             this.NameInf = new System.Windows.Forms.Label();
@@ -50,14 +58,14 @@
             this.SurnameLable = new System.Windows.Forms.Label();
             this.NameLable = new System.Windows.Forms.Label();
             this.LoginLable = new System.Windows.Forms.Label();
-            this.RefreshButton = new System.Windows.Forms.Button();
             this.UserMenu.SuspendLayout();
             this.LibraryTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BooksDGV)).BeginInit();
             this.UserLibrary.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MyLibraryTable)).BeginInit();
             this.UserProfile.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.SettingsBox.SuspendLayout();
+            this.MainInformationBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // UserMenu
@@ -74,10 +82,11 @@
             // 
             // LibraryTab
             // 
-            this.LibraryTab.Controls.Add(this.Title);
+            this.LibraryTab.Controls.Add(this.RefreshButton1);
+            this.LibraryTab.Controls.Add(this.TitleRButton);
             this.LibraryTab.Controls.Add(this.AuthorRButton);
             this.LibraryTab.Controls.Add(this.SearchButton);
-            this.LibraryTab.Controls.Add(this.textBox1);
+            this.LibraryTab.Controls.Add(this.ParamTextBox);
             this.LibraryTab.Controls.Add(this.AddToUserLibraryButton);
             this.LibraryTab.Controls.Add(this.BooksDGV);
             this.LibraryTab.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -90,17 +99,28 @@
             this.LibraryTab.Text = "Library";
             this.LibraryTab.UseVisualStyleBackColor = true;
             // 
-            // Title
+            // RefreshButton1
             // 
-            this.Title.AutoSize = true;
-            this.Title.Location = new System.Drawing.Point(477, 451);
-            this.Title.Margin = new System.Windows.Forms.Padding(4);
-            this.Title.Name = "Title";
-            this.Title.Size = new System.Drawing.Size(52, 20);
-            this.Title.TabIndex = 5;
-            this.Title.TabStop = true;
-            this.Title.Text = "Title";
-            this.Title.UseVisualStyleBackColor = true;
+            this.RefreshButton1.BackgroundImage = global::GUIProject.Properties.Resources.refresh;
+            this.RefreshButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.RefreshButton1.Location = new System.Drawing.Point(946, 442);
+            this.RefreshButton1.Name = "RefreshButton1";
+            this.RefreshButton1.Size = new System.Drawing.Size(35, 35);
+            this.RefreshButton1.TabIndex = 6;
+            this.RefreshButton1.UseVisualStyleBackColor = true;
+            this.RefreshButton1.Click += new System.EventHandler(this.RefreshButton1_Click);
+            // 
+            // TitleRButton
+            // 
+            this.TitleRButton.AutoSize = true;
+            this.TitleRButton.Location = new System.Drawing.Point(477, 451);
+            this.TitleRButton.Margin = new System.Windows.Forms.Padding(4);
+            this.TitleRButton.Name = "TitleRButton";
+            this.TitleRButton.Size = new System.Drawing.Size(52, 20);
+            this.TitleRButton.TabIndex = 5;
+            this.TitleRButton.TabStop = true;
+            this.TitleRButton.Text = "Title";
+            this.TitleRButton.UseVisualStyleBackColor = true;
             // 
             // AuthorRButton
             // 
@@ -124,14 +144,15 @@
             this.SearchButton.TabIndex = 3;
             this.SearchButton.Text = "Search";
             this.SearchButton.UseVisualStyleBackColor = true;
+            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
-            // textBox1
+            // ParamTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(271, 416);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(178, 22);
-            this.textBox1.TabIndex = 2;
+            this.ParamTextBox.Location = new System.Drawing.Point(271, 416);
+            this.ParamTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.ParamTextBox.Name = "ParamTextBox";
+            this.ParamTextBox.Size = new System.Drawing.Size(178, 22);
+            this.ParamTextBox.TabIndex = 2;
             // 
             // AddToUserLibraryButton
             // 
@@ -152,7 +173,7 @@
             this.BooksDGV.Location = new System.Drawing.Point(10, 8);
             this.BooksDGV.Margin = new System.Windows.Forms.Padding(4);
             this.BooksDGV.Name = "BooksDGV";
-            this.BooksDGV.Size = new System.Drawing.Size(932, 400);
+            this.BooksDGV.Size = new System.Drawing.Size(970, 400);
             this.BooksDGV.TabIndex = 0;
             // 
             // UserLibrary
@@ -170,10 +191,21 @@
             this.UserLibrary.Text = "My Library";
             this.UserLibrary.UseVisualStyleBackColor = true;
             // 
+            // RefreshButton
+            // 
+            this.RefreshButton.BackgroundImage = global::GUIProject.Properties.Resources.refresh;
+            this.RefreshButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.RefreshButton.Location = new System.Drawing.Point(946, 442);
+            this.RefreshButton.Name = "RefreshButton";
+            this.RefreshButton.Size = new System.Drawing.Size(35, 35);
+            this.RefreshButton.TabIndex = 3;
+            this.RefreshButton.UseVisualStyleBackColor = true;
+            this.RefreshButton.Click += new System.EventHandler(this.RefreshButton_Click);
+            // 
             // ExtendBookButton
             // 
             this.ExtendBookButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ExtendBookButton.Location = new System.Drawing.Point(203, 395);
+            this.ExtendBookButton.Location = new System.Drawing.Point(161, 421);
             this.ExtendBookButton.Name = "ExtendBookButton";
             this.ExtendBookButton.Size = new System.Drawing.Size(120, 50);
             this.ExtendBookButton.TabIndex = 2;
@@ -184,7 +216,7 @@
             // RemoveButton
             // 
             this.RemoveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.RemoveButton.Location = new System.Drawing.Point(39, 395);
+            this.RemoveButton.Location = new System.Drawing.Point(7, 421);
             this.RemoveButton.Name = "RemoveButton";
             this.RemoveButton.Size = new System.Drawing.Size(120, 50);
             this.RemoveButton.TabIndex = 1;
@@ -198,12 +230,13 @@
             this.MyLibraryTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.MyLibraryTable.Location = new System.Drawing.Point(7, 7);
             this.MyLibraryTable.Name = "MyLibraryTable";
-            this.MyLibraryTable.Size = new System.Drawing.Size(974, 346);
+            this.MyLibraryTable.Size = new System.Drawing.Size(970, 400);
             this.MyLibraryTable.TabIndex = 0;
             // 
             // UserProfile
             // 
-            this.UserProfile.Controls.Add(this.groupBox1);
+            this.UserProfile.Controls.Add(this.SettingsBox);
+            this.UserProfile.Controls.Add(this.MainInformationBox);
             this.UserProfile.Location = new System.Drawing.Point(4, 27);
             this.UserProfile.Margin = new System.Windows.Forms.Padding(4);
             this.UserProfile.Name = "UserProfile";
@@ -213,22 +246,91 @@
             this.UserProfile.Text = "MyProfile";
             this.UserProfile.UseVisualStyleBackColor = true;
             // 
-            // groupBox1
+            // SettingsBox
             // 
-            this.groupBox1.Controls.Add(this.PhoneInf);
-            this.groupBox1.Controls.Add(this.SurnameInf);
-            this.groupBox1.Controls.Add(this.NameInf);
-            this.groupBox1.Controls.Add(this.LoginInf);
-            this.groupBox1.Controls.Add(this.PhoneLable);
-            this.groupBox1.Controls.Add(this.SurnameLable);
-            this.groupBox1.Controls.Add(this.NameLable);
-            this.groupBox1.Controls.Add(this.LoginLable);
-            this.groupBox1.Location = new System.Drawing.Point(7, 40);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(294, 168);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Information";
+            this.SettingsBox.Controls.Add(this.ChangePasswordButton);
+            this.SettingsBox.Controls.Add(this.ChangeLoginButton);
+            this.SettingsBox.Controls.Add(this.ChangePhoneButton);
+            this.SettingsBox.Controls.Add(this.ChangeSurnameButton);
+            this.SettingsBox.Controls.Add(this.ChangeNameButton);
+            this.SettingsBox.Location = new System.Drawing.Point(437, 29);
+            this.SettingsBox.Name = "SettingsBox";
+            this.SettingsBox.Size = new System.Drawing.Size(349, 200);
+            this.SettingsBox.TabIndex = 2;
+            this.SettingsBox.TabStop = false;
+            this.SettingsBox.Text = "Settings";
+            // 
+            // ChangePasswordButton
+            // 
+            this.ChangePasswordButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ChangePasswordButton.Location = new System.Drawing.Point(131, 110);
+            this.ChangePasswordButton.Name = "ChangePasswordButton";
+            this.ChangePasswordButton.Size = new System.Drawing.Size(94, 49);
+            this.ChangePasswordButton.TabIndex = 4;
+            this.ChangePasswordButton.Text = "Change Password";
+            this.ChangePasswordButton.UseVisualStyleBackColor = true;
+            this.ChangePasswordButton.Click += new System.EventHandler(this.ChangePasswordButton_Click);
+            // 
+            // ChangeLoginButton
+            // 
+            this.ChangeLoginButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ChangeLoginButton.Location = new System.Drawing.Point(20, 110);
+            this.ChangeLoginButton.Name = "ChangeLoginButton";
+            this.ChangeLoginButton.Size = new System.Drawing.Size(94, 49);
+            this.ChangeLoginButton.TabIndex = 3;
+            this.ChangeLoginButton.Text = "Change Login";
+            this.ChangeLoginButton.UseVisualStyleBackColor = true;
+            this.ChangeLoginButton.Click += new System.EventHandler(this.ChangeLoginButton_Click);
+            // 
+            // ChangePhoneButton
+            // 
+            this.ChangePhoneButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ChangePhoneButton.Location = new System.Drawing.Point(240, 27);
+            this.ChangePhoneButton.Name = "ChangePhoneButton";
+            this.ChangePhoneButton.Size = new System.Drawing.Size(94, 49);
+            this.ChangePhoneButton.TabIndex = 2;
+            this.ChangePhoneButton.Text = "Change Phone";
+            this.ChangePhoneButton.UseVisualStyleBackColor = true;
+            this.ChangePhoneButton.Click += new System.EventHandler(this.ChangePhoneButton_Click);
+            // 
+            // ChangeSurnameButton
+            // 
+            this.ChangeSurnameButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ChangeSurnameButton.Location = new System.Drawing.Point(131, 27);
+            this.ChangeSurnameButton.Name = "ChangeSurnameButton";
+            this.ChangeSurnameButton.Size = new System.Drawing.Size(94, 49);
+            this.ChangeSurnameButton.TabIndex = 1;
+            this.ChangeSurnameButton.Text = "Change Surname";
+            this.ChangeSurnameButton.UseVisualStyleBackColor = true;
+            this.ChangeSurnameButton.Click += new System.EventHandler(this.ChangeSurnameButton_Click);
+            // 
+            // ChangeNameButton
+            // 
+            this.ChangeNameButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ChangeNameButton.Location = new System.Drawing.Point(20, 27);
+            this.ChangeNameButton.Name = "ChangeNameButton";
+            this.ChangeNameButton.Size = new System.Drawing.Size(94, 49);
+            this.ChangeNameButton.TabIndex = 0;
+            this.ChangeNameButton.Text = "Change Name";
+            this.ChangeNameButton.UseVisualStyleBackColor = true;
+            this.ChangeNameButton.Click += new System.EventHandler(this.ChangeNameButton_Click);
+            // 
+            // MainInformationBox
+            // 
+            this.MainInformationBox.Controls.Add(this.PhoneInf);
+            this.MainInformationBox.Controls.Add(this.SurnameInf);
+            this.MainInformationBox.Controls.Add(this.NameInf);
+            this.MainInformationBox.Controls.Add(this.LoginInf);
+            this.MainInformationBox.Controls.Add(this.PhoneLable);
+            this.MainInformationBox.Controls.Add(this.SurnameLable);
+            this.MainInformationBox.Controls.Add(this.NameLable);
+            this.MainInformationBox.Controls.Add(this.LoginLable);
+            this.MainInformationBox.Location = new System.Drawing.Point(22, 27);
+            this.MainInformationBox.Name = "MainInformationBox";
+            this.MainInformationBox.Size = new System.Drawing.Size(300, 200);
+            this.MainInformationBox.TabIndex = 1;
+            this.MainInformationBox.TabStop = false;
+            this.MainInformationBox.Text = "Information";
             // 
             // PhoneInf
             // 
@@ -306,17 +408,6 @@
             this.LoginLable.TabIndex = 0;
             this.LoginLable.Text = "Login: ";
             // 
-            // RefreshButton
-            // 
-            this.RefreshButton.BackgroundImage = global::GUIProject.Properties.Resources.refresh;
-            this.RefreshButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.RefreshButton.Location = new System.Drawing.Point(924, 433);
-            this.RefreshButton.Name = "RefreshButton";
-            this.RefreshButton.Size = new System.Drawing.Size(46, 38);
-            this.RefreshButton.TabIndex = 3;
-            this.RefreshButton.UseVisualStyleBackColor = true;
-            this.RefreshButton.Click += new System.EventHandler(this.RefreshButton_Click);
-            // 
             // UserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -334,8 +425,9 @@
             this.UserLibrary.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.MyLibraryTable)).EndInit();
             this.UserProfile.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.SettingsBox.ResumeLayout(false);
+            this.MainInformationBox.ResumeLayout(false);
+            this.MainInformationBox.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -347,12 +439,12 @@
         private System.Windows.Forms.DataGridView BooksDGV;
         private System.Windows.Forms.TabPage UserLibrary;
         private System.Windows.Forms.Button AddToUserLibraryButton;
-        private System.Windows.Forms.RadioButton Title;
+        private System.Windows.Forms.RadioButton TitleRButton;
         private System.Windows.Forms.RadioButton AuthorRButton;
         private System.Windows.Forms.Button SearchButton;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox ParamTextBox;
         private System.Windows.Forms.TabPage UserProfile;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox MainInformationBox;
         private System.Windows.Forms.Label PhoneInf;
         private System.Windows.Forms.Label SurnameInf;
         private System.Windows.Forms.Label NameInf;
@@ -365,5 +457,12 @@
         private System.Windows.Forms.Button ExtendBookButton;
         private System.Windows.Forms.Button RemoveButton;
         private System.Windows.Forms.Button RefreshButton;
+        private System.Windows.Forms.Button RefreshButton1;
+        private System.Windows.Forms.GroupBox SettingsBox;
+        private System.Windows.Forms.Button ChangePasswordButton;
+        private System.Windows.Forms.Button ChangeLoginButton;
+        private System.Windows.Forms.Button ChangePhoneButton;
+        private System.Windows.Forms.Button ChangeSurnameButton;
+        private System.Windows.Forms.Button ChangeNameButton;
     }
 }

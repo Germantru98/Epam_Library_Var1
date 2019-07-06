@@ -32,7 +32,7 @@ namespace BL
             return authorizationDao.IsLoginExist(login);
         }
 
-        private string GetPasswordForLogin(string login)
+        public string GetPasswordForLogin(string login)
         {
             return authorizationDao.GetPasswordForLogin(login);
         }

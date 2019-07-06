@@ -28,5 +28,15 @@ namespace BL
         {
             bookDao.Update(book);
         }
+
+        public IEnumerable<Book> GetBooksByTitle(string title)
+        {
+            return bookDao.GetBooksByTitle(title);
+        }
+
+        public IEnumerable<Book> GetBooksByAuthor(string author)
+        {
+            return bookDao.GetBooksByAuthor(author);
+        }
     }
 }

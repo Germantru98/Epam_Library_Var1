@@ -87,5 +87,55 @@ namespace DAL
                 cmd.ExecuteNonQuery();
             }
         }
+
+        public IEnumerable<Book> GetBooksByTitle(string title)
+        {
+            List<Book> books = new List<Book>();
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                var cmd = connection.CreateCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "GetBooksByTitle";
+                cmd.Parameters.AddWithValue("@Title", title);
+                connection.Open();
+                var reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    books.Add(new Book
+                    {
+                        Book_ID = (int)reader["Book_ID"],
+                        Title = (string)reader["Title"],
+                        Author = (string)reader["Author"],
+                        DateOfСreation = (DateTime)reader["DateOfCreation"]
+                    });
+                }
+            }
+            return books;
+        }
+
+        public IEnumerable<Book> GetBooksByAuthor(string author)
+        {
+            List<Book> books = new List<Book>();
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                var cmd = connection.CreateCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "GetBooksByAuthor";
+                cmd.Parameters.AddWithValue("@Author", author);
+                connection.Open();
+                var reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    books.Add(new Book
+                    {
+                        Book_ID = (int)reader["Book_ID"],
+                        Title = (string)reader["Title"],
+                        Author = (string)reader["Author"],
+                        DateOfСreation = (DateTime)reader["DateOfCreation"]
+                    });
+                }
+            }
+            return books;
+        }
     }
 }

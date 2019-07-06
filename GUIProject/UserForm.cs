@@ -50,5 +50,56 @@ namespace GUIProject
         {
             MyLibraryTable.DataSource = userLibrary.GetBooksByID(_reader.Reader_ID);
         }
+
+        private void SearchButton_Click(object sender, EventArgs e)
+        {
+            if (AuthorRButton.Checked && ParamTextBox.Text != null)
+            {
+                BooksDGV.DataSource = bookBL.GetBooksByAuthor(ParamTextBox.Text);
+            }
+            else if (TitleRButton.Checked && ParamTextBox.Text != null)
+            {
+                BooksDGV.DataSource = bookBL.GetBooksByTitle(ParamTextBox.Text);
+            }
+            else
+            {
+                BooksDGV.DataSource = bookBL.GetAllBooks();
+            }
+        }
+
+        private void RefreshButton1_Click(object sender, EventArgs e)
+        {
+            BooksDGV.DataSource = bookBL.GetAllBooks();
+        }
+
+        private void ChangeNameButton_Click(object sender, EventArgs e)
+        {
+            ChangeInformationForm form = new ChangeInformationForm(_reader,"Name");
+            form.Show();
+        }
+
+        private void ChangeSurnameButton_Click(object sender, EventArgs e)
+        {
+            ChangeInformationForm form = new ChangeInformationForm(_reader, "Surname");
+            form.Show();
+        }
+
+        private void ChangePhoneButton_Click(object sender, EventArgs e)
+        {
+            ChangeInformationForm form = new ChangeInformationForm(_reader, "Phone");
+            form.Show();
+        }
+
+        private void ChangeLoginButton_Click(object sender, EventArgs e)
+        {
+            ChangeInformationForm form = new ChangeInformationForm(_reader, "Login");
+            form.Show();
+        }
+
+        private void ChangePasswordButton_Click(object sender, EventArgs e)
+        {
+            ChangePasswordForm form = new ChangePasswordForm(_reader);
+            form.Show();
+        }
     }
 }

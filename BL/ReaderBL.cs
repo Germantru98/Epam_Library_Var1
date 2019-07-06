@@ -28,5 +28,10 @@ namespace BL
         {
             readerDao.Update(reader);
         }
+
+        public IEnumerable<ReaderDemo> GetAllUsers()
+        {
+            return readerDao.GetAllUsers();
+        }
     }
 }

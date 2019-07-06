@@ -36,9 +36,9 @@ namespace DAL
             }
         }
 
-        public IEnumerable<Reader> GetAllReaders()
+        public IEnumerable<ReaderDemo> GetAllUsers()
         {
-            List<Reader> readers = new List<Reader>();
+            List<ReaderDemo> readers = new List<ReaderDemo>();
             using (var connection = new SqlConnection(_connectionString))
             {
                 var cmd = connection.CreateCommand();
@@ -48,12 +48,13 @@ namespace DAL
                 var scan = cmd.ExecuteReader();
                 while (scan.Read())
                 {
-                    readers.Add(new Reader
+                    readers.Add(new ReaderDemo
                     {
                         Reader_ID = (int)scan["Reader_ID"],
                         Name = (string)scan["Name"],
                         Surname = (string)scan["Surname"],
-                        Phone = (string)scan["Phone"]
+                        Phone = (string)scan["Phone"],
+                        Login = (string)scan["Login"]
                     });
                 }
             }
@@ -87,6 +88,31 @@ namespace DAL
                 connection.Open();
                 cmd.ExecuteNonQuery();
             }
+        }
+
+        public IEnumerable<Reader> GetAllReaders()
+        {
+            List<Reader> readers = new List<Reader>();
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                var cmd = connection.CreateCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "GetAllReaders";
+                connection.Open();
+                var scan = cmd.ExecuteReader();
+                while (scan.Read())
+                {
+                    readers.Add(new Reader
+                    {
+                        Reader_ID = (int)scan["Reader_ID"],
+                        Name = (string)scan["Name"],
+                        Surname = (string)scan["Surname"],
+                        Phone = (string)scan["Phone"],
+                        Login = (string)scan["Login"]
+                    });
+                }
+            }
+            return readers;
         }
     }
 }

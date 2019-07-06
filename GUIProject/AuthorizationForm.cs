@@ -31,17 +31,26 @@ namespace GUIProject
 
         private void SignInButton_Click(object sender, EventArgs e)
         {
-            Hide();
-            if (authorization.isAuthorized(LoginTextBox.Text, PasswordTextBox.Text))
+            if (LoginTextBox.Text == "Admin" && PasswordTextBox.Text == "admin")
             {
-                _reader = authorization.GetReaderByLogin(LoginTextBox.Text);
-                UserForm form = new UserForm(_reader);
-                form.Show();
+                Hide();
+                AdminMenu menu = new AdminMenu();
+                menu.Show();
             }
             else
             {
-                MessageBox.Show("Ошибка при вводе данных");
-                Show();
+                if (authorization.isAuthorized(LoginTextBox.Text, PasswordTextBox.Text))
+                {
+                    Hide();
+                    _reader = authorization.GetReaderByLogin(LoginTextBox.Text);
+                    UserForm form = new UserForm(_reader);
+                    form.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Error, wrong data");
+                    Show();
+                }
             }
         }
     }

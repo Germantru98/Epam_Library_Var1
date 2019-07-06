@@ -6,7 +6,7 @@
         public string Name { get; set; }
         public string Surname { get; set; }
         public string Phone { get; set; }
-        public string Login { get; private set; }
+        public string Login { get; set; }
         public string Password { get; private set; }
 
         public Reader()

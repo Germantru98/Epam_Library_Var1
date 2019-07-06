@@ -74,7 +74,7 @@ namespace GUIProject
 
         private void ChangeNameButton_Click(object sender, EventArgs e)
         {
-            ChangeInformationForm form = new ChangeInformationForm(_reader,"Name");
+            ChangeInformationForm form = new ChangeInformationForm(_reader, "Name");
             form.Show();
         }
 

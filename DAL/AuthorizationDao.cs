@@ -1,11 +1,12 @@
-﻿using Entities;
+﻿using DAL.Interface;
+using Entities;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 
 namespace DAL
 {
-    public class AuthorizationDao
+    public class AuthorizationDao : IAuthorizationDao
     {
         private string _connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
 
@@ -139,7 +140,7 @@ namespace DAL
                     reader.Name = (string)scan["Name"];
                     reader.Surname = (string)scan["Surname"];
                     reader.Phone = (string)scan["Phone"];
-                    reader.SetLogin((string)scan["Login"]);
+                    reader.Login = (string)scan["Login"];
                 }
             }
             return reader;

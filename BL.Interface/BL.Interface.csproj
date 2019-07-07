@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IAuthorizationHandler.cs" />
     <Compile Include="IBookBL.cs" />
     <Compile Include="IReaderBL.cs" />
     <Compile Include="ITicketBL.cs" />

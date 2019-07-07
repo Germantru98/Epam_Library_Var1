@@ -40,58 +40,61 @@
             this.loginLable = new System.Windows.Forms.Label();
             this.PasswordLable = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.ConfirmPassTextBox = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // SignUpButton
             // 
             this.SignUpButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.SignUpButton.Location = new System.Drawing.Point(175, 370);
+            this.SignUpButton.Location = new System.Drawing.Point(175, 411);
             this.SignUpButton.Name = "SignUpButton";
             this.SignUpButton.Size = new System.Drawing.Size(113, 38);
             this.SignUpButton.TabIndex = 0;
             this.SignUpButton.Text = "Sign Up!";
             this.SignUpButton.UseVisualStyleBackColor = true;
+            this.SignUpButton.Click += new System.EventHandler(this.SignUpButton_Click);
             // 
             // NameTextBox
             // 
-            this.NameTextBox.Location = new System.Drawing.Point(175, 98);
+            this.NameTextBox.Location = new System.Drawing.Point(143, 98);
             this.NameTextBox.Name = "NameTextBox";
-            this.NameTextBox.Size = new System.Drawing.Size(116, 20);
+            this.NameTextBox.Size = new System.Drawing.Size(180, 20);
             this.NameTextBox.TabIndex = 1;
             // 
             // PhoneTextBox
             // 
-            this.PhoneTextBox.Location = new System.Drawing.Point(175, 199);
+            this.PhoneTextBox.Location = new System.Drawing.Point(143, 199);
             this.PhoneTextBox.Name = "PhoneTextBox";
-            this.PhoneTextBox.Size = new System.Drawing.Size(116, 20);
+            this.PhoneTextBox.Size = new System.Drawing.Size(180, 20);
             this.PhoneTextBox.TabIndex = 2;
             // 
             // SurnameTextBox
             // 
-            this.SurnameTextBox.Location = new System.Drawing.Point(175, 150);
+            this.SurnameTextBox.Location = new System.Drawing.Point(143, 150);
             this.SurnameTextBox.Name = "SurnameTextBox";
-            this.SurnameTextBox.Size = new System.Drawing.Size(116, 20);
+            this.SurnameTextBox.Size = new System.Drawing.Size(180, 20);
             this.SurnameTextBox.TabIndex = 3;
             // 
             // LoginTextBox
             // 
-            this.LoginTextBox.Location = new System.Drawing.Point(175, 254);
+            this.LoginTextBox.Location = new System.Drawing.Point(143, 254);
             this.LoginTextBox.Name = "LoginTextBox";
-            this.LoginTextBox.Size = new System.Drawing.Size(116, 20);
+            this.LoginTextBox.Size = new System.Drawing.Size(180, 20);
             this.LoginTextBox.TabIndex = 4;
             // 
             // PasswordTextBox
             // 
-            this.PasswordTextBox.Location = new System.Drawing.Point(175, 307);
+            this.PasswordTextBox.Location = new System.Drawing.Point(143, 307);
             this.PasswordTextBox.Name = "PasswordTextBox";
-            this.PasswordTextBox.Size = new System.Drawing.Size(116, 20);
+            this.PasswordTextBox.Size = new System.Drawing.Size(180, 20);
             this.PasswordTextBox.TabIndex = 5;
             // 
             // NameLable
             // 
             this.NameLable.AutoSize = true;
             this.NameLable.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.NameLable.Location = new System.Drawing.Point(172, 77);
+            this.NameLable.Location = new System.Drawing.Point(144, 77);
             this.NameLable.Name = "NameLable";
             this.NameLable.Size = new System.Drawing.Size(52, 18);
             this.NameLable.TabIndex = 6;
@@ -101,7 +104,7 @@
             // 
             this.SurnameLabel.AutoSize = true;
             this.SurnameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.SurnameLabel.Location = new System.Drawing.Point(172, 129);
+            this.SurnameLabel.Location = new System.Drawing.Point(140, 129);
             this.SurnameLabel.Name = "SurnameLabel";
             this.SurnameLabel.Size = new System.Drawing.Size(75, 18);
             this.SurnameLabel.TabIndex = 7;
@@ -111,7 +114,7 @@
             // 
             this.PhoneLable.AutoSize = true;
             this.PhoneLable.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.PhoneLable.Location = new System.Drawing.Point(175, 178);
+            this.PhoneLable.Location = new System.Drawing.Point(140, 178);
             this.PhoneLable.Name = "PhoneLable";
             this.PhoneLable.Size = new System.Drawing.Size(56, 18);
             this.PhoneLable.TabIndex = 8;
@@ -121,7 +124,7 @@
             // 
             this.loginLable.AutoSize = true;
             this.loginLable.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.loginLable.Location = new System.Drawing.Point(175, 233);
+            this.loginLable.Location = new System.Drawing.Point(140, 233);
             this.loginLable.Name = "loginLable";
             this.loginLable.Size = new System.Drawing.Size(49, 18);
             this.loginLable.TabIndex = 9;
@@ -131,7 +134,7 @@
             // 
             this.PasswordLable.AutoSize = true;
             this.PasswordLable.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.PasswordLable.Location = new System.Drawing.Point(172, 286);
+            this.PasswordLable.Location = new System.Drawing.Point(140, 286);
             this.PasswordLable.Name = "PasswordLable";
             this.PasswordLable.Size = new System.Drawing.Size(83, 18);
             this.PasswordLable.TabIndex = 10;
@@ -147,11 +150,30 @@
             this.label1.TabIndex = 11;
             this.label1.Text = "Registration";
             // 
+            // ConfirmPassTextBox
+            // 
+            this.ConfirmPassTextBox.Location = new System.Drawing.Point(143, 355);
+            this.ConfirmPassTextBox.Name = "ConfirmPassTextBox";
+            this.ConfirmPassTextBox.Size = new System.Drawing.Size(180, 20);
+            this.ConfirmPassTextBox.TabIndex = 12;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(140, 334);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(148, 18);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Confirm Password";
+            // 
             // SignUpForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 461);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.ConfirmPassTextBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.PasswordLable);
             this.Controls.Add(this.loginLable);
@@ -168,7 +190,7 @@
             this.MinimumSize = new System.Drawing.Size(500, 500);
             this.Name = "SignUpForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "8";
+            this.Text = "Sign Up";
             this.Load += new System.EventHandler(this.SignUpForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -189,5 +211,7 @@
         private System.Windows.Forms.Label loginLable;
         private System.Windows.Forms.Label PasswordLable;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox ConfirmPassTextBox;
+        private System.Windows.Forms.Label label2;
     }
 }

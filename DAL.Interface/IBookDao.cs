@@ -5,12 +5,18 @@ namespace DAL.Interface
 {
     public interface IBookDao
     {
-        IEnumerable<Book> GetAllBooks();
-
         void Add(Book book);
 
         void Update(Book book);
 
         void Remove(int ID);
+
+        IEnumerable<Book> GetAllBooks();
+
+        IEnumerable<Book> GetBooksByTitle(string title);
+
+        IEnumerable<Book> GetBooksByAuthor(string author);
+
+        IEnumerable<UserLibraryBook> GetBooksByID(int Reader_ID);
     }
 }

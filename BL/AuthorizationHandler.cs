@@ -1,11 +1,13 @@
-﻿using DAL;
+﻿using BL.Interface;
+using DAL;
+using DAL.Interface;
 using Entities;
 
 namespace BL
 {
-    public class AuthorizationHandler
+    public class AuthorizationHandler : IAuthorizationHandler
     {
-        private AuthorizationDao authorizationDao = new AuthorizationDao();
+        private IAuthorizationDao authorizationDao = new AuthorizationDao();
 
         public void SetNewPassword(Reader reader, string newPassword)
         {
@@ -17,17 +19,17 @@ namespace BL
             authorizationDao.SetNewLogin(reader, newLogin);
         }
 
-        private string GetLogin(Reader reader)
+        public string GetLogin(Reader reader)
         {
             return authorizationDao.GetLogin(reader);
         }
 
-        private string GetPassword(Reader reader)
+        public string GetPassword(Reader reader)
         {
             return authorizationDao.GetPassword(reader);
         }
 
-        private bool IsLoginExist(string login)
+        public bool IsLoginExist(string login)
         {
             return authorizationDao.IsLoginExist(login);
         }

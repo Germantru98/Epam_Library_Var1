@@ -140,6 +140,7 @@
             this.Controls.Add(this.AdminFormTable);
             this.Name = "AdminMenu";
             this.Text = "AdminMenu";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AdminMenu_FormClosed);
             this.AdminFormTable.ResumeLayout(false);
             this.LibraryPage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.LibraryTable)).EndInit();

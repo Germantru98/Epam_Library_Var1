@@ -418,6 +418,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UserForm";
             this.Text = "Menu";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.UserForm_FormClosed);
             this.UserMenu.ResumeLayout(false);
             this.LibraryTab.ResumeLayout(false);
             this.LibraryTab.PerformLayout();

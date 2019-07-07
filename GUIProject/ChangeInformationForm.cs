@@ -1,4 +1,5 @@
 ﻿using BL;
+using BL.Interface;
 using Entities;
 using System;
 using System.Windows.Forms;
@@ -7,10 +8,10 @@ namespace GUIProject
 {
     public partial class ChangeInformationForm : Form
     {
-        private ReaderBL readerBL = new ReaderBL();
+        private IReaderBL readerBL = new ReaderBL();
         private Reader _reader;
         private string Atribute;
-        private AuthorizationHandler authorization = new AuthorizationHandler();
+        private IAuthorizationHandler authorization = new AuthorizationHandler();
 
         public ChangeInformationForm(Reader reader, string atribute)
         {

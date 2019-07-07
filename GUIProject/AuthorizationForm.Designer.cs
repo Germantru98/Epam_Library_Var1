@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.LoginTextBox = new System.Windows.Forms.TextBox();
             this.PasswordTextBox = new System.Windows.Forms.TextBox();
             this.AuthorizationLable = new System.Windows.Forms.Label();
@@ -36,6 +37,8 @@
             this.SignInButton = new System.Windows.Forms.Button();
             this.SignUpButton = new System.Windows.Forms.Button();
             this.ForgotPasswordLable = new System.Windows.Forms.LinkLabel();
+            this.EmptyLoginError = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.EmptyLoginError)).BeginInit();
             this.SuspendLayout();
             // 
             // LoginTextBox
@@ -44,6 +47,7 @@
             this.LoginTextBox.Name = "LoginTextBox";
             this.LoginTextBox.Size = new System.Drawing.Size(146, 20);
             this.LoginTextBox.TabIndex = 0;
+            this.LoginTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.LoginTextBox_Validating);
             // 
             // PasswordTextBox
             // 
@@ -52,6 +56,7 @@
             this.PasswordTextBox.PasswordChar = '*';
             this.PasswordTextBox.Size = new System.Drawing.Size(146, 20);
             this.PasswordTextBox.TabIndex = 1;
+            this.PasswordTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.PasswordTextBox_Validating);
             // 
             // AuthorizationLable
             // 
@@ -116,6 +121,10 @@
             this.ForgotPasswordLable.Text = "Forgot password?";
             this.ForgotPasswordLable.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ForgotPasswordLable_LinkClicked);
             // 
+            // EmptyLoginError
+            // 
+            this.EmptyLoginError.ContainerControl = this;
+            // 
             // AuthorizationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -134,6 +143,9 @@
             this.Name = "AuthorizationForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AuthorizationForm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AuthorizationForm_FormClosed);
+            this.Enter += new System.EventHandler(this.SignInButton_Click);
+            ((System.ComponentModel.ISupportInitialize)(this.EmptyLoginError)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -149,5 +161,6 @@
         private System.Windows.Forms.Button SignInButton;
         private System.Windows.Forms.Button SignUpButton;
         private System.Windows.Forms.LinkLabel ForgotPasswordLable;
+        private System.Windows.Forms.ErrorProvider EmptyLoginError;
     }
 }

@@ -7,7 +7,7 @@
         public string Surname { get; set; }
         public string Phone { get; set; }
         public string Login { get; set; }
-        public string Password { get; private set; }
+        public string Password { get; set; }
 
         public Reader()
         { }
@@ -19,19 +19,18 @@
             Phone = phone;
         }
 
+        public Reader(string name, string surname, string phone, string login, string password)
+        {
+            Name = name;
+            Surname = surname;
+            Phone = phone;
+            Login = login;
+            Password = password;
+        }
+
         public override string ToString()
         {
             return $"{Reader_ID}. Name: {Name} Surname: {Surname} Phone: {Phone}";
-        }
-
-        public void SetPassword(string newPassword)
-        {
-            Password = newPassword;
-        }
-
-        public void SetLogin(string newLogin)
-        {
-            Login = newLogin;
         }
     }
 }

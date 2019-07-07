@@ -1,12 +1,13 @@
 ﻿using BL;
+using BL.Interface;
 using System.Windows.Forms;
 
 namespace GUIProject
 {
     public partial class AdminMenu : Form
     {
-        private BookBL bookBL = new BookBL();
-        private ReaderBL readerBL = new ReaderBL();
+        private IBookBL bookBL = new BookBL();
+        private IReaderBL readerBL = new ReaderBL();
 
         public AdminMenu()
         {
@@ -30,6 +31,12 @@ namespace GUIProject
         {
             int selectedBookID = (int)LibraryTable.CurrentRow.Cells[0].Value;
             bookBL.Remove(selectedBookID);
+        }
+
+        private void AdminMenu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            AuthorizationForm form = new AuthorizationForm();
+            form.Show();
         }
     }
 }

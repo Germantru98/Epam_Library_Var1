@@ -1,5 +1,6 @@
 ﻿using BL.Interface;
 using DAL;
+using DAL.Interface;
 using Entities;
 using System.Collections.Generic;
 
@@ -7,7 +8,7 @@ namespace BL
 {
     public class TicketBL : ITicketBL
     {
-        private TicketDao ticketDao = new TicketDao();
+        private ITicketDao ticketDao = new TicketDao();
 
         public void Add(Ticket ticket)
         {

@@ -1,4 +1,5 @@
 ﻿using BL;
+using BL.Interface;
 using Entities;
 using System;
 using System.Windows.Forms;
@@ -7,10 +8,9 @@ namespace GUIProject
 {
     public partial class UserForm : Form
     {
-        private BookBL bookBL = new BookBL();
+        private IBookBL bookBL = new BookBL();
         private Reader _reader;
-        private TicketBL ticketBL = new TicketBL();
-        private UserLibraryBL userLibrary = new UserLibraryBL();
+        private ITicketBL ticketBL = new TicketBL();
 
         public UserForm(Reader reader)
         {
@@ -21,7 +21,7 @@ namespace GUIProject
             NameInf.Text = _reader.Name;
             SurnameInf.Text = _reader.Surname;
             PhoneInf.Text = _reader.Phone;
-            MyLibraryTable.DataSource = userLibrary.GetBooksByID(_reader.Reader_ID);
+            MyLibraryTable.DataSource = bookBL.GetBooksByID(_reader.Reader_ID);
         }
 
         private void AddToUserLibraryButton_Click(object sender, EventArgs e)
@@ -29,7 +29,7 @@ namespace GUIProject
             int selectedBookID = (int)BooksDGV.CurrentRow.Cells[0].Value;
             Ticket tmpTicket = new Ticket(_reader.Reader_ID, selectedBookID, DateTime.Now, DateTime.Now + new TimeSpan(7, 00, 00, 00));
             ticketBL.Add(tmpTicket);
-            MessageBox.Show("Книга успешно добавлена в вашу библиотеку");
+            MessageBox.Show("Book successfully added");
         }
 
         private void RemoveButton_Click(object sender, EventArgs e)
@@ -48,7 +48,7 @@ namespace GUIProject
 
         private void RefreshButton_Click(object sender, EventArgs e)
         {
-            MyLibraryTable.DataSource = userLibrary.GetBooksByID(_reader.Reader_ID);
+            MyLibraryTable.DataSource = bookBL.GetBooksByID(_reader.Reader_ID);
         }
 
         private void SearchButton_Click(object sender, EventArgs e)
@@ -99,6 +99,12 @@ namespace GUIProject
         private void ChangePasswordButton_Click(object sender, EventArgs e)
         {
             ChangePasswordForm form = new ChangePasswordForm(_reader);
+            form.Show();
+        }
+
+        private void UserForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            AuthorizationForm form = new AuthorizationForm();
             form.Show();
         }
     }

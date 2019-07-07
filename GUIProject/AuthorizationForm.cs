@@ -1,4 +1,5 @@
 ﻿using BL;
+using BL.Interface;
 using Entities;
 using System;
 using System.Windows.Forms;
@@ -7,7 +8,7 @@ namespace GUIProject
 {
     public partial class AuthorizationForm : Form
     {
-        private AuthorizationHandler authorization = new AuthorizationHandler();
+        private IAuthorizationHandler authorization = new AuthorizationHandler();
         private Reader _reader;
 
         public AuthorizationForm()
@@ -49,8 +50,28 @@ namespace GUIProject
                 else
                 {
                     MessageBox.Show("Error, wrong data");
-                    Show();
                 }
+            }
+        }
+
+        private void AuthorizationForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void LoginTextBox_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (String.IsNullOrEmpty(LoginTextBox.Text))
+            {
+                EmptyLoginError.SetError(LoginTextBox, "This field cant be empty!");
+            }
+        }
+
+        private void PasswordTextBox_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (String.IsNullOrEmpty(PasswordTextBox.Text))
+            {
+                EmptyLoginError.SetError(PasswordTextBox, "This field cant be empty!");
             }
         }
     }

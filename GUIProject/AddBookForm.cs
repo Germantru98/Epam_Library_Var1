@@ -1,20 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using BL;
+using BL.Interface;
 using Entities;
-using BL;
+using System;
+using System.Windows.Forms;
 
 namespace GUIProject
 {
     public partial class AddBookForm : Form
     {
-        private BookBL bookBL = new BookBL();
+        private IBookBL bookBL = new BookBL();
+
         public AddBookForm()
         {
             InitializeComponent();

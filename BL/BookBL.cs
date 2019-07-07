@@ -1,5 +1,6 @@
 ﻿using BL.Interface;
 using DAL;
+using DAL.Interface;
 using Entities;
 using System.Collections.Generic;
 
@@ -7,16 +8,11 @@ namespace BL
 {
     public class BookBL : IBookBL
     {
-        private BookDao bookDao = new BookDao();
+        private IBookDao bookDao = new BookDao();
 
         public void Add(Book book)
         {
             bookDao.Add(book);
-        }
-
-        public IEnumerable<Book> GetAllBooks()
-        {
-            return bookDao.GetAllBooks();
         }
 
         public void Remove(int ID)
@@ -37,6 +33,16 @@ namespace BL
         public IEnumerable<Book> GetBooksByAuthor(string author)
         {
             return bookDao.GetBooksByAuthor(author);
+        }
+
+        public IEnumerable<Book> GetAllBooks()
+        {
+            return bookDao.GetAllBooks();
+        }
+
+        public IEnumerable<UserLibraryBook> GetBooksByID(int Reader_ID)
+        {
+            return bookDao.GetBooksByID(Reader_ID);
         }
     }
 }

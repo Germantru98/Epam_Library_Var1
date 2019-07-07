@@ -147,6 +147,10 @@
     <None Include="Resources\underconstruction.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BL.Interface\BL.Interface.csproj">
+      <Project>{b8cd53a1-083d-4bd8-8bbb-6722cbcba942}</Project>
+      <Name>BL.Interface</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BL\BL.csproj">
       <Project>{f67ebc69-d887-4af3-bbee-71c9771dcc0f}</Project>
       <Name>BL</Name>

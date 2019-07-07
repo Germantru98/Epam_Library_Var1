@@ -1,5 +1,6 @@
 ﻿using BL.Interface;
 using DAL;
+using DAL.Interface;
 using Entities;
 using System.Collections.Generic;
 
@@ -7,7 +8,7 @@ namespace BL
 {
     public class ReaderBL : IReaderBL
     {
-        private ReaderDao readerDao = new ReaderDao();
+        private IReaderDao readerDao = new ReaderDao();
 
         public void Add(Reader reader)
         {

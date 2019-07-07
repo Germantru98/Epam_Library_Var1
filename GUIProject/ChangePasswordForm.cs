@@ -1,4 +1,5 @@
 ﻿using BL;
+using BL.Interface;
 using Entities;
 using System;
 using System.Windows.Forms;
@@ -7,7 +8,7 @@ namespace GUIProject
 {
     public partial class ChangePasswordForm : Form
     {
-        private AuthorizationHandler authorization = new AuthorizationHandler();
+        private IAuthorizationHandler authorization = new AuthorizationHandler();
         private Reader _reader;
 
         public ChangePasswordForm(Reader reader)

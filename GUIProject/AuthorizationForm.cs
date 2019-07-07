@@ -32,25 +32,32 @@ namespace GUIProject
 
         private void SignInButton_Click(object sender, EventArgs e)
         {
-            if (LoginTextBox.Text == "Admin" && PasswordTextBox.Text == "admin")
+            if (!isFieldsEmpty())
             {
-                Hide();
-                AdminMenu menu = new AdminMenu();
-                menu.Show();
-            }
-            else
-            {
-                if (authorization.isAuthorized(LoginTextBox.Text, PasswordTextBox.Text))
+                if (LoginTextBox.Text == "Admin" && PasswordTextBox.Text == "admin")
                 {
                     Hide();
-                    _reader = authorization.GetReaderByLogin(LoginTextBox.Text);
-                    UserForm form = new UserForm(_reader);
-                    form.Show();
+                    AdminMenu menu = new AdminMenu();
+                    menu.Show();
                 }
                 else
                 {
-                    MessageBox.Show("Error, wrong data");
+                    if (authorization.isAuthorized(LoginTextBox.Text, PasswordTextBox.Text))
+                    {
+                        Hide();
+                        _reader = authorization.GetReaderByLogin(LoginTextBox.Text);
+                        UserForm form = new UserForm(_reader);
+                        form.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error, wrong data" + Environment.NewLine + "Check Login or Password");
+                    }
                 }
+            }
+            else
+            {
+                MessageBox.Show("Fill in empty fields");
             }
         }
 
@@ -63,7 +70,15 @@ namespace GUIProject
         {
             if (String.IsNullOrEmpty(LoginTextBox.Text))
             {
-                EmptyLoginError.SetError(LoginTextBox, "This field cant be empty!");
+                EmptyFieldError.SetError(LoginTextBox, "This field cant be empty!");
+            }
+            else if (!authorization.IsLoginExist(LoginTextBox.Text))
+            {
+                EmptyFieldError.SetError(LoginTextBox, "Login is not exists");
+            }
+            else
+            {
+                EmptyFieldError.Clear();
             }
         }
 
@@ -71,7 +86,25 @@ namespace GUIProject
         {
             if (String.IsNullOrEmpty(PasswordTextBox.Text))
             {
-                EmptyLoginError.SetError(PasswordTextBox, "This field cant be empty!");
+                EmptyFieldError.SetError(PasswordTextBox, "This field cant be empty!");
+            }
+            else
+            {
+                EmptyFieldError.Clear();
+            }
+        }
+
+        private bool isFieldsEmpty()
+        {
+            bool isLoginTextBoxEmpty = string.IsNullOrEmpty(LoginTextBox.Text);
+            bool isPasswordTextBoxEmpty = string.IsNullOrEmpty(PasswordTextBox.Text);
+            if (isLoginTextBoxEmpty || isPasswordTextBoxEmpty)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
     }

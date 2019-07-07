@@ -51,7 +51,7 @@
             this.AdminFormTable.Location = new System.Drawing.Point(12, 12);
             this.AdminFormTable.Name = "AdminFormTable";
             this.AdminFormTable.SelectedIndex = 0;
-            this.AdminFormTable.Size = new System.Drawing.Size(998, 523);
+            this.AdminFormTable.Size = new System.Drawing.Size(1000, 537);
             this.AdminFormTable.TabIndex = 0;
             // 
             // LibraryPage
@@ -63,7 +63,7 @@
             this.LibraryPage.Location = new System.Drawing.Point(4, 27);
             this.LibraryPage.Name = "LibraryPage";
             this.LibraryPage.Padding = new System.Windows.Forms.Padding(3);
-            this.LibraryPage.Size = new System.Drawing.Size(990, 492);
+            this.LibraryPage.Size = new System.Drawing.Size(992, 506);
             this.LibraryPage.TabIndex = 0;
             this.LibraryPage.Text = "Library";
             this.LibraryPage.UseVisualStyleBackColor = true;
@@ -136,8 +136,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1022, 547);
+            this.ClientSize = new System.Drawing.Size(1024, 561);
             this.Controls.Add(this.AdminFormTable);
+            this.MaximumSize = new System.Drawing.Size(1040, 600);
+            this.MinimumSize = new System.Drawing.Size(1040, 600);
             this.Name = "AdminMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminMenu";

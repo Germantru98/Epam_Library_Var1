@@ -77,7 +77,7 @@
             this.UserMenu.Margin = new System.Windows.Forms.Padding(4);
             this.UserMenu.Name = "UserMenu";
             this.UserMenu.SelectedIndex = 0;
-            this.UserMenu.Size = new System.Drawing.Size(996, 515);
+            this.UserMenu.Size = new System.Drawing.Size(998, 535);
             this.UserMenu.TabIndex = 0;
             // 
             // LibraryTab
@@ -94,7 +94,7 @@
             this.LibraryTab.Margin = new System.Windows.Forms.Padding(4);
             this.LibraryTab.Name = "LibraryTab";
             this.LibraryTab.Padding = new System.Windows.Forms.Padding(4);
-            this.LibraryTab.Size = new System.Drawing.Size(988, 484);
+            this.LibraryTab.Size = new System.Drawing.Size(990, 504);
             this.LibraryTab.TabIndex = 0;
             this.LibraryTab.Text = "Library";
             this.LibraryTab.UseVisualStyleBackColor = true;
@@ -412,10 +412,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1022, 547);
+            this.ClientSize = new System.Drawing.Size(1024, 561);
             this.Controls.Add(this.UserMenu);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximumSize = new System.Drawing.Size(1040, 600);
+            this.MinimumSize = new System.Drawing.Size(1040, 600);
             this.Name = "UserForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";

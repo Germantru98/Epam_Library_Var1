@@ -21,16 +21,119 @@ namespace GUIProject
 
         private void SignUpButton_Click(object sender, EventArgs e)
         {
-            if (PasswordTextBox.Text == ConfirmPassTextBox.Text)
+            if (!isAllFieldEmpty())
             {
-                Reader reader = new Reader(NameTextBox.Text, SurnameTextBox.Text, PhoneTextBox.Text, LoginTextBox.Text, PasswordTextBox.Text);
-                readerBL.Add(reader);
-                MessageBox.Show("Registration completed");
-                Close();
+                if (PasswordTextBox.Text == ConfirmPassTextBox.Text)
+                {
+                    Reader reader = new Reader(NameTextBox.Text, SurnameTextBox.Text, PhoneTextBox.Text, LoginTextBox.Text, PasswordTextBox.Text);
+                    readerBL.Add(reader);
+                    MessageBox.Show("Registration completed");
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show(" Passwords do not match");
+                }
             }
             else
             {
-                MessageBox.Show(" Passwords do not match");
+                MessageBox.Show("Fill in empty fields");
+            }
+        }
+
+        private void NameTextBox_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (String.IsNullOrEmpty(NameTextBox.Text))
+            {
+                EmptyFieldError.SetError(NameTextBox, "This field cant be empty!");
+            }
+            else
+            {
+                EmptyFieldError.Clear();
+            }
+        }
+
+        private void SurnameTextBox_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (String.IsNullOrEmpty(SurnameTextBox.Text))
+            {
+                EmptyFieldError.SetError(SurnameTextBox, "This field cant be empty!");
+            }
+            else
+            {
+                EmptyFieldError.Clear();
+            }
+        }
+
+        private void PhoneTextBox_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (String.IsNullOrEmpty(PhoneTextBox.Text))
+            {
+                EmptyFieldError.SetError(PhoneTextBox, "This field cant be empty!");
+            }
+            else
+            {
+                EmptyFieldError.Clear();
+            }
+        }
+
+        private void LoginTextBox_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (String.IsNullOrEmpty(PhoneTextBox.Text))
+            {
+                EmptyFieldError.SetError(PhoneTextBox, "This field cant be empty!");
+            }
+            else
+            {
+                EmptyFieldError.Clear();
+            }
+        }
+
+        private void PasswordTextBox_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (String.IsNullOrEmpty(PasswordTextBox.Text))
+            {
+                EmptyFieldError.SetError(PasswordTextBox, "This field cant be empty!");
+            }
+            else
+            {
+                EmptyFieldError.Clear();
+            }
+        }
+
+        private void ConfirmPassTextBox_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (String.IsNullOrEmpty(ConfirmPassTextBox.Text))
+            {
+                EmptyFieldError.SetError(ConfirmPassTextBox, "This field cant be empty!");
+            }
+            else
+            {
+                EmptyFieldError.Clear();
+            }
+        }
+
+        private void SignUpForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            AuthorizationForm form = new AuthorizationForm();
+            form.Show();
+        }
+
+        private bool isAllFieldEmpty()
+        {
+            bool isNameTextBoxEmpty = string.IsNullOrEmpty(NameTextBox.Text);
+            bool isSurnameTextBoxEmpty = string.IsNullOrEmpty(SurnameTextBox.Text);
+            bool isPhoneTextBoxEmpty = string.IsNullOrEmpty(PhoneTextBox.Text);
+            bool isLoginTextBoxEmpty = string.IsNullOrEmpty(LoginTextBox.Text);
+            bool isPasswordTextBoxEmpty = string.IsNullOrEmpty(PasswordTextBox.Text);
+            bool isConfirmPassTextBoxEmpty = string.IsNullOrEmpty(ConfirmPassTextBox.Text);
+            if (isNameTextBoxEmpty || isSurnameTextBoxEmpty || isPhoneTextBoxEmpty || isLoginTextBoxEmpty || isPasswordTextBoxEmpty || isConfirmPassTextBoxEmpty)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
     }

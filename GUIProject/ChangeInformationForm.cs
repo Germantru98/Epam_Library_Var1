@@ -23,25 +23,60 @@ namespace GUIProject
 
         private void AcceptButton_Click(object sender, EventArgs e)
         {
-            if (Atribute == "Name")
+            bool check = true;
+            if (String.IsNullOrEmpty(AtributeTextBox.Text))
             {
-                _reader.Name = AtributeTextBox.Text;
+                MessageBox.Show("Enter some data!");
             }
-            if (Atribute == "Surname")
+            else
             {
-                _reader.Surname = AtributeTextBox.Text;
+                if (Atribute == "Name")
+                {
+                    _reader.Name = AtributeTextBox.Text;
+                }
+                if (Atribute == "Surname")
+                {
+                    _reader.Surname = AtributeTextBox.Text;
+                }
+                if (Atribute == "Phone")
+                {
+                    _reader.Phone = AtributeTextBox.Text;
+                }
+                if (Atribute == "Login")
+                {
+                    if (authorization.IsLoginExist(AtributeTextBox.Text))
+                    {
+                        check = false;
+                        MessageBox.Show("Login already exists");
+                    }
+                    else
+                    {
+                        authorization.SetNewLogin(_reader, AtributeTextBox.Text);
+                    }
+                }
+                if (check)
+                {
+                    readerBL.Update(_reader);
+                    MessageBox.Show($"{Atribute} changed." + Environment.NewLine + "Сhanges will be displayed after the next authorization.");
+                    Close();
+                }
             }
-            if (Atribute == "Phone")
+        }
+
+        private void AtributeTextBox_Validated(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(AtributeTextBox.Text))
             {
-                _reader.Phone = AtributeTextBox.Text;
+                EmptyFieldError.SetError(AtributeTextBox, "This field cant be empty!");
             }
-            if (Atribute == "Login")
+        }
+
+        private void ChangeInformationForm_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (String.IsNullOrEmpty(AtributeTextBox.Text))
             {
-                authorization.SetNewLogin(_reader, AtributeTextBox.Text);
+                EmptyFieldError.SetError(AtributeTextBox, "This field cant be empty!");
             }
-            readerBL.Update(_reader);
-            MessageBox.Show($"{Atribute} changed." + Environment.NewLine + "Сhanges will be displayed after the next authorization.");
-            Close();
         }
     }
 }

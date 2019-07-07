@@ -139,6 +139,7 @@
             this.ClientSize = new System.Drawing.Size(1022, 547);
             this.Controls.Add(this.AdminFormTable);
             this.Name = "AdminMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminMenu";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AdminMenu_FormClosed);
             this.AdminFormTable.ResumeLayout(false);

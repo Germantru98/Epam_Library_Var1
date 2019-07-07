@@ -39,6 +39,7 @@
             this.ClientSize = new System.Drawing.Size(484, 461);
             this.DoubleBuffered = true;
             this.Name = "ForgotPasswordForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ForgotPasswordForm";
             this.ResumeLayout(false);
 

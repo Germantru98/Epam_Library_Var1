@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.SignUpButton = new System.Windows.Forms.Button();
             this.NameTextBox = new System.Windows.Forms.TextBox();
             this.PhoneTextBox = new System.Windows.Forms.TextBox();
@@ -42,6 +43,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.ConfirmPassTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.EmptyFieldError = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.EmptyFieldError)).BeginInit();
             this.SuspendLayout();
             // 
             // SignUpButton
@@ -61,6 +64,7 @@
             this.NameTextBox.Name = "NameTextBox";
             this.NameTextBox.Size = new System.Drawing.Size(180, 20);
             this.NameTextBox.TabIndex = 1;
+            this.NameTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.NameTextBox_Validating);
             // 
             // PhoneTextBox
             // 
@@ -68,6 +72,7 @@
             this.PhoneTextBox.Name = "PhoneTextBox";
             this.PhoneTextBox.Size = new System.Drawing.Size(180, 20);
             this.PhoneTextBox.TabIndex = 2;
+            this.PhoneTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.PhoneTextBox_Validating);
             // 
             // SurnameTextBox
             // 
@@ -75,6 +80,7 @@
             this.SurnameTextBox.Name = "SurnameTextBox";
             this.SurnameTextBox.Size = new System.Drawing.Size(180, 20);
             this.SurnameTextBox.TabIndex = 3;
+            this.SurnameTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.SurnameTextBox_Validating);
             // 
             // LoginTextBox
             // 
@@ -82,6 +88,7 @@
             this.LoginTextBox.Name = "LoginTextBox";
             this.LoginTextBox.Size = new System.Drawing.Size(180, 20);
             this.LoginTextBox.TabIndex = 4;
+            this.LoginTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.LoginTextBox_Validating);
             // 
             // PasswordTextBox
             // 
@@ -89,6 +96,7 @@
             this.PasswordTextBox.Name = "PasswordTextBox";
             this.PasswordTextBox.Size = new System.Drawing.Size(180, 20);
             this.PasswordTextBox.TabIndex = 5;
+            this.PasswordTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.PasswordTextBox_Validating);
             // 
             // NameLable
             // 
@@ -156,6 +164,7 @@
             this.ConfirmPassTextBox.Name = "ConfirmPassTextBox";
             this.ConfirmPassTextBox.Size = new System.Drawing.Size(180, 20);
             this.ConfirmPassTextBox.TabIndex = 12;
+            this.ConfirmPassTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.ConfirmPassTextBox_Validating);
             // 
             // label2
             // 
@@ -166,6 +175,10 @@
             this.label2.Size = new System.Drawing.Size(148, 18);
             this.label2.TabIndex = 13;
             this.label2.Text = "Confirm Password";
+            // 
+            // EmptyFieldError
+            // 
+            this.EmptyFieldError.ContainerControl = this;
             // 
             // SignUpForm
             // 
@@ -191,7 +204,9 @@
             this.Name = "SignUpForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sign Up";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SignUpForm_FormClosed);
             this.Load += new System.EventHandler(this.SignUpForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.EmptyFieldError)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -213,5 +228,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox ConfirmPassTextBox;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ErrorProvider EmptyFieldError;
     }
 }

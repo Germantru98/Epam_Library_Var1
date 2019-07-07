@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.AcceptButton = new System.Windows.Forms.Button();
             this.NewPasswordTextBox = new System.Windows.Forms.TextBox();
             this.ConfirmPassTextBox = new System.Windows.Forms.TextBox();
@@ -36,6 +37,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.EmptyFieldError = new System.Windows.Forms.ErrorProvider(this.components);
+            this.WrongConfirmPassError = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.EmptyFieldError)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.WrongConfirmPassError)).BeginInit();
             this.SuspendLayout();
             // 
             // AcceptButton
@@ -55,6 +60,7 @@
             this.NewPasswordTextBox.Name = "NewPasswordTextBox";
             this.NewPasswordTextBox.Size = new System.Drawing.Size(159, 20);
             this.NewPasswordTextBox.TabIndex = 1;
+            this.NewPasswordTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.NewPasswordTextBox_Validating);
             // 
             // ConfirmPassTextBox
             // 
@@ -62,6 +68,7 @@
             this.ConfirmPassTextBox.Name = "ConfirmPassTextBox";
             this.ConfirmPassTextBox.Size = new System.Drawing.Size(159, 20);
             this.ConfirmPassTextBox.TabIndex = 2;
+            this.ConfirmPassTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.ConfirmPassTextBox_Validating);
             // 
             // OldPasswordTextBox
             // 
@@ -69,6 +76,7 @@
             this.OldPasswordTextBox.Name = "OldPasswordTextBox";
             this.OldPasswordTextBox.Size = new System.Drawing.Size(159, 20);
             this.OldPasswordTextBox.TabIndex = 3;
+            this.OldPasswordTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.OldPasswordTextBox_Validating);
             // 
             // Title
             // 
@@ -110,6 +118,14 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "Confirm new password";
             // 
+            // EmptyFieldError
+            // 
+            this.EmptyFieldError.ContainerControl = this;
+            // 
+            // WrongConfirmPassError
+            // 
+            this.WrongConfirmPassError.ContainerControl = this;
+            // 
             // ChangePasswordForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -124,7 +140,10 @@
             this.Controls.Add(this.NewPasswordTextBox);
             this.Controls.Add(this.AcceptButton);
             this.Name = "ChangePasswordForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ChangePassword";
+            ((System.ComponentModel.ISupportInitialize)(this.EmptyFieldError)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.WrongConfirmPassError)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -140,5 +159,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ErrorProvider EmptyFieldError;
+        private System.Windows.Forms.ErrorProvider WrongConfirmPassError;
     }
 }

@@ -16,8 +16,6 @@ namespace BL.Interface
 
         string GetPasswordForLogin(string login);
 
-        Reader GetReaderByLogin(string login);
-
         bool isAuthorized(string login, string password);
     }
 }

@@ -15,7 +15,5 @@ namespace DAL.Interface
         bool IsLoginExist(string login);
 
         string GetPasswordForLogin(string login);
-
-        Reader GetReaderByLogin(string login);
     }
 }

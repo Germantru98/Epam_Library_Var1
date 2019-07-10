@@ -17,6 +17,6 @@ namespace DAL.Interface
 
         IEnumerable<Book> GetBooksByAuthor(string author);
 
-        IEnumerable<UserLibraryBook> GetBooksByID(int Reader_ID);
+        IEnumerable<UserBook> GetBooksByID(int Reader_ID);
     }
 }

@@ -138,9 +138,9 @@ namespace DAL
             return books;
         }
 
-        public IEnumerable<UserLibraryBook> GetBooksByID(int Reader_ID)
+        public IEnumerable<UserBook> GetBooksByID(int Reader_ID)
         {
-            List<UserLibraryBook> library = new List<UserLibraryBook>();
+            List<UserBook> library = new List<UserBook>();
             using (var connection = new SqlConnection(_connectionString))
             {
                 var cmd = connection.CreateCommand();
@@ -151,7 +151,7 @@ namespace DAL
                 var reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    library.Add(new UserLibraryBook
+                    library.Add(new UserBook
                     {
                         Ticket_ID = (int)reader["Ticket_ID"],
                         Author = (string)reader["Author"],
@@ -162,5 +162,6 @@ namespace DAL
             }
             return library;
         }
+
     }
 }

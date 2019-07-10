@@ -123,27 +123,5 @@ namespace DAL
             }
         }
 
-        public Reader GetReaderByLogin(string login)
-        {
-            Reader reader = new Reader();
-            using (var connection = new SqlConnection(_connectionString))
-            {
-                var cmd = connection.CreateCommand();
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "GetReaderByLogin";
-                cmd.Parameters.AddWithValue(@"Login", login);
-                connection.Open();
-                var scan = cmd.ExecuteReader();
-                while (scan.Read())
-                {
-                    reader.Reader_ID = (int)scan["Reader_ID"];
-                    reader.Name = (string)scan["Name"];
-                    reader.Surname = (string)scan["Surname"];
-                    reader.Phone = (string)scan["Phone"];
-                    reader.Login = (string)scan["Login"];
-                }
-            }
-            return reader;
-        }
     }
 }

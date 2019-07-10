@@ -14,5 +14,6 @@ namespace BL.Interface
         IEnumerable<Reader> GetAllReaders();
 
         IEnumerable<ReaderDemo> GetAllUsers();
+        Reader GetReaderByLogin(string login);
     }
 }

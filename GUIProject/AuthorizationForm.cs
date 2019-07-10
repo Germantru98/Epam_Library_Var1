@@ -9,6 +9,7 @@ namespace GUIProject
     public partial class AuthorizationForm : Form
     {
         private IAuthorizationHandler authorization = new AuthorizationHandler();
+        private IReaderBL readerBL = new ReaderBL();
         private Reader _reader;
 
         public AuthorizationForm()
@@ -45,7 +46,7 @@ namespace GUIProject
                     if (authorization.isAuthorized(LoginTextBox.Text, PasswordTextBox.Text))
                     {
                         Hide();
-                        _reader = authorization.GetReaderByLogin(LoginTextBox.Text);
+                        _reader = readerBL.GetReaderByLogin(LoginTextBox.Text);
                         UserForm form = new UserForm(_reader);
                         form.Show();
                     }
@@ -72,7 +73,7 @@ namespace GUIProject
             {
                 EmptyFieldError.SetError(LoginTextBox, "This field cant be empty!");
             }
-            else if (!authorization.IsLoginExist(LoginTextBox.Text))
+            else if (!authorization.IsLoginExist(LoginTextBox.Text)&& LoginTextBox.Text!="Admin")
             {
                 EmptyFieldError.SetError(LoginTextBox, "Login is not exists");
             }

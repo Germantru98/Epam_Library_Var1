@@ -51,10 +51,6 @@ namespace BL
                 return false;
             }
         }
-
-        public Reader GetReaderByLogin(string login)
-        {
-            return authorizationDao.GetReaderByLogin(login);
-        }
+        
     }
 }

@@ -1,16 +1,16 @@
 ﻿namespace Entities
 {
-    public class UserLibraryBook
+    public class UserBook
     {
         public int Ticket_ID { get; set; }
         public string Title { get; set; }
         public string Author { get; set; }
         public int DaysBeforeReturn { get; set; }
 
-        public UserLibraryBook()
+        public UserBook()
         { }
 
-        public UserLibraryBook(int ticket_ID, string title, string author, int days)
+        public UserBook(int ticket_ID, string title, string author, int days)
         {
             Ticket_ID = ticket_ID;
             Title = title;

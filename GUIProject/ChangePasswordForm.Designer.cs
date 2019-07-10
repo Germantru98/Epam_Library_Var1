@@ -62,7 +62,7 @@
             this.NewPasswordTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.NewPasswordTextBox.Location = new System.Drawing.Point(15, 122);
             this.NewPasswordTextBox.Name = "NewPasswordTextBox";
-            this.NewPasswordTextBox.Size = new System.Drawing.Size(257, 22);
+            this.NewPasswordTextBox.Size = new System.Drawing.Size(243, 22);
             this.NewPasswordTextBox.TabIndex = 1;
             this.NewPasswordTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.NewPasswordTextBox_Validating);
             // 
@@ -73,7 +73,7 @@
             this.ConfirmPassTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ConfirmPassTextBox.Location = new System.Drawing.Point(15, 164);
             this.ConfirmPassTextBox.Name = "ConfirmPassTextBox";
-            this.ConfirmPassTextBox.Size = new System.Drawing.Size(257, 22);
+            this.ConfirmPassTextBox.Size = new System.Drawing.Size(243, 22);
             this.ConfirmPassTextBox.TabIndex = 2;
             this.ConfirmPassTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.ConfirmPassTextBox_Validating);
             // 
@@ -84,7 +84,7 @@
             this.OldPasswordTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.OldPasswordTextBox.Location = new System.Drawing.Point(15, 77);
             this.OldPasswordTextBox.Name = "OldPasswordTextBox";
-            this.OldPasswordTextBox.Size = new System.Drawing.Size(257, 22);
+            this.OldPasswordTextBox.Size = new System.Drawing.Size(243, 22);
             this.OldPasswordTextBox.TabIndex = 3;
             this.OldPasswordTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.OldPasswordTextBox_Validating);
             // 

@@ -40,7 +40,7 @@ namespace BL
             return bookDao.GetAllBooks();
         }
 
-        public IEnumerable<UserLibraryBook> GetBooksByID(int Reader_ID)
+        public IEnumerable<UserBook> GetBooksByID(int Reader_ID)
         {
             return bookDao.GetBooksByID(Reader_ID);
         }

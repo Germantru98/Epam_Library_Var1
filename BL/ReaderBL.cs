@@ -34,5 +34,10 @@ namespace BL
         {
             return readerDao.GetAllUsers();
         }
+
+        public Reader GetReaderByLogin(string login)
+        {
+            return readerDao.GetReaderByLogin(login);
+        }
     }
 }

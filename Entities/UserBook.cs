@@ -22,5 +22,18 @@
         {
             return $"Title: {Title} Author: {Author} Days before return: {DaysBeforeReturn}";
         }
+        public bool isCorrectState()
+        {
+
+            if (string.IsNullOrEmpty(Title) || string.IsNullOrEmpty(Author))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+
+        }
     }
 }

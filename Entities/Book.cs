@@ -23,5 +23,19 @@ namespace Entities
         {
             return $"{Book_ID}. Title: \"{Title}\". Author: {Author}. Date of creation: {DateOfСreation.ToShortDateString()}";
         }
+
+        public bool isCorrectState()
+        {
+
+            if (string.IsNullOrEmpty(Title) || DateOfСreation == null || string.IsNullOrEmpty(Author))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+
+        }
     }
 }

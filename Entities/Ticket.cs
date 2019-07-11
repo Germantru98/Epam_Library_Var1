@@ -25,5 +25,18 @@ namespace Entities
         {
             return $"{Ticket_ID}. Reader: {Reader_ID} Book: {Book_ID} Start: {StartDate} End: {EndDate}";
         }
-    }
+        public bool isCorrectState()
+        {
+            
+                if (Reader_ID<=0||Book_ID<=0||StartDate==null||EndDate==null)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            
+        }
+}
 }

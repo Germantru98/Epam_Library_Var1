@@ -32,5 +32,19 @@
         {
             return $"{Reader_ID}. Name: {Name} Surname: {Surname} Phone: {Phone}";
         }
+        public bool isCorrectState()
+        {
+
+            if (string.IsNullOrEmpty(Name) || string.IsNullOrEmpty(Surname) || string.IsNullOrEmpty(Phone) || string.IsNullOrEmpty(Login) ||
+                string.IsNullOrEmpty(Password))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+
+        }
     }
 }

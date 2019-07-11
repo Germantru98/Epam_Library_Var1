@@ -73,7 +73,7 @@ namespace GUIProject
             {
                 EmptyFieldError.SetError(LoginTextBox, "This field cant be empty!");
             }
-            else if (!authorization.IsLoginExist(LoginTextBox.Text)&& LoginTextBox.Text!="Admin")
+            else if (!authorization.IsLoginExist(LoginTextBox.Text) && LoginTextBox.Text != "Admin")
             {
                 EmptyFieldError.SetError(LoginTextBox, "Login is not exists");
             }

@@ -51,6 +51,5 @@ namespace BL
                 return false;
             }
         }
-        
     }
 }

@@ -21,7 +21,6 @@ namespace BL
             {
                 throw new ArgumentException("Error, Added book in incorrec state (empty fields)");
             }
-            
         }
 
         public void Remove(int ID)
@@ -34,7 +33,6 @@ namespace BL
             {
                 throw new ArgumentException("ID is negative or zero");
             }
-            
         }
 
         public void Update(Book book)
@@ -47,7 +45,6 @@ namespace BL
             {
                 throw new ArgumentException("Error, updated book in incorrec state (empty fields)");
             }
-            
         }
 
         public IEnumerable<Book> GetBooksByTitle(string title)
@@ -60,7 +57,6 @@ namespace BL
             {
                 throw new ArgumentException("Value empty or null -> title");
             }
-            
         }
 
         public IEnumerable<Book> GetBooksByAuthor(string author)
@@ -90,7 +86,6 @@ namespace BL
             {
                 throw new ArgumentException("Reader_ID is negative or zero");
             }
-            
         }
     }
 }

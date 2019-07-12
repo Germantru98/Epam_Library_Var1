@@ -26,7 +26,6 @@ namespace Entities
 
         public bool isCorrectState()
         {
-
             if (string.IsNullOrEmpty(Title) || DateOfСreation == null || string.IsNullOrEmpty(Author))
             {
                 return false;
@@ -35,7 +34,6 @@ namespace Entities
             {
                 return true;
             }
-
         }
     }
 }

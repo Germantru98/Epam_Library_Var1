@@ -24,7 +24,6 @@ namespace BL
             {
                 authorizationDao.SetNewPassword(reader, newPassword);
             }
-
         }
 
         public void SetNewLogin(Reader reader, string newLogin)
@@ -41,7 +40,6 @@ namespace BL
             {
                 authorizationDao.SetNewLogin(reader, newLogin);
             }
-
         }
 
         public string GetLogin(Reader reader)
@@ -54,7 +52,6 @@ namespace BL
             {
                 throw new ArgumentException("Reader parametr -> Reader_ID is negative or zero");
             }
-
         }
 
         public string GetPassword(Reader reader)
@@ -67,7 +64,6 @@ namespace BL
             {
                 throw new ArgumentException("Reader parametr -> Reader_ID is negative or zero");
             }
-
         }
 
         public bool IsLoginExist(string login)
@@ -80,7 +76,6 @@ namespace BL
             {
                 return authorizationDao.IsLoginExist(login);
             }
-
         }
 
         public string GetPasswordForLogin(string login)
@@ -118,7 +113,6 @@ namespace BL
                 }
             }
             else throw new ArgumentException("Wrong parametr ->password");
-
         }
     }
 }

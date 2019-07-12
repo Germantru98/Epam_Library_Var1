@@ -2,8 +2,8 @@
 using DAL;
 using DAL.Interface;
 using Entities;
-using System.Collections.Generic;
 using System;
+using System.Collections.Generic;
 
 namespace BL
 {
@@ -21,7 +21,6 @@ namespace BL
             {
                 throw new ArgumentException("Error, Added reader in incorrec state (empty fields)");
             }
-            
         }
 
         public IEnumerable<Reader> GetAllReaders()

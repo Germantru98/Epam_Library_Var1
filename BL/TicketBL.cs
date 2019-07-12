@@ -62,7 +62,6 @@ namespace BL
             {
                 throw new ArgumentException("ticket_ID is negative or zero");
             }
-           
         }
     }
 }

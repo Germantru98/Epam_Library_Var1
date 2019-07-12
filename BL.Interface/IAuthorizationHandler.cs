@@ -14,6 +14,8 @@ namespace BL.Interface
 
         bool IsLoginExist(string login);
 
+        bool IsPhoneExist(string phone);
+
         string GetPasswordForLogin(string login);
 
         bool isAuthorized(string login, string password);

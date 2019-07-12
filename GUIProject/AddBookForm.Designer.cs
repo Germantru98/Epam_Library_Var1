@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.Title = new System.Windows.Forms.Label();
             this.TitleTextBox = new System.Windows.Forms.TextBox();
             this.AuthorTextBox = new System.Windows.Forms.TextBox();
@@ -36,6 +37,8 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.DateLable = new System.Windows.Forms.Label();
             this.AddButton = new System.Windows.Forms.Button();
+            this.EmptyFieldError = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.EmptyFieldError)).BeginInit();
             this.SuspendLayout();
             // 
             // Title
@@ -56,8 +59,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TitleTextBox.Location = new System.Drawing.Point(12, 117);
             this.TitleTextBox.Name = "TitleTextBox";
-            this.TitleTextBox.Size = new System.Drawing.Size(460, 24);
+            this.TitleTextBox.Size = new System.Drawing.Size(439, 24);
             this.TitleTextBox.TabIndex = 1;
+            this.TitleTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.TitleTextBox_Validating);
             // 
             // AuthorTextBox
             // 
@@ -66,8 +70,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.AuthorTextBox.Location = new System.Drawing.Point(15, 190);
             this.AuthorTextBox.Name = "AuthorTextBox";
-            this.AuthorTextBox.Size = new System.Drawing.Size(457, 24);
+            this.AuthorTextBox.Size = new System.Drawing.Size(436, 24);
             this.AuthorTextBox.TabIndex = 2;
+            this.AuthorTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.AuthorTextBox_Validating);
             // 
             // BookTitle
             // 
@@ -130,6 +135,10 @@
             this.AddButton.UseVisualStyleBackColor = true;
             this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
+            // EmptyFieldError
+            // 
+            this.EmptyFieldError.ContainerControl = this;
+            // 
             // AddBookForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -150,6 +159,7 @@
             this.Name = "AddBookForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Book";
+            ((System.ComponentModel.ISupportInitialize)(this.EmptyFieldError)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -165,5 +175,6 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label DateLable;
         private System.Windows.Forms.Button AddButton;
+        private System.Windows.Forms.ErrorProvider EmptyFieldError;
     }
 }

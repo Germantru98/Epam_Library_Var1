@@ -104,7 +104,7 @@
             this.SignInButton.Location = new System.Drawing.Point(12, 259);
             this.SignInButton.Name = "SignInButton";
             this.SignInButton.Size = new System.Drawing.Size(120, 40);
-            this.SignInButton.TabIndex = 5;
+            this.SignInButton.TabIndex = 3;
             this.SignInButton.Text = "Sign In";
             this.SignInButton.UseVisualStyleBackColor = true;
             this.SignInButton.Click += new System.EventHandler(this.SignInButton_Click);
@@ -116,7 +116,7 @@
             this.SignUpButton.Location = new System.Drawing.Point(202, 259);
             this.SignUpButton.Name = "SignUpButton";
             this.SignUpButton.Size = new System.Drawing.Size(120, 40);
-            this.SignUpButton.TabIndex = 6;
+            this.SignUpButton.TabIndex = 4;
             this.SignUpButton.Text = "Sign Up";
             this.SignUpButton.UseVisualStyleBackColor = true;
             this.SignUpButton.Click += new System.EventHandler(this.SignUpButton_Click);

@@ -106,6 +106,7 @@
             // LibraryTable
             // 
             this.LibraryTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.LibraryTable.BackgroundColor = System.Drawing.Color.White;
             this.LibraryTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.LibraryTable.Location = new System.Drawing.Point(6, 6);
             this.LibraryTable.Name = "LibraryTable";
@@ -118,7 +119,7 @@
             this.UsersPage.Location = new System.Drawing.Point(4, 27);
             this.UsersPage.Name = "UsersPage";
             this.UsersPage.Padding = new System.Windows.Forms.Padding(3);
-            this.UsersPage.Size = new System.Drawing.Size(990, 492);
+            this.UsersPage.Size = new System.Drawing.Size(992, 506);
             this.UsersPage.TabIndex = 1;
             this.UsersPage.Text = "Users";
             this.UsersPage.UseVisualStyleBackColor = true;
@@ -126,10 +127,11 @@
             // UsersTable
             // 
             this.UsersTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.UsersTable.BackgroundColor = System.Drawing.Color.White;
             this.UsersTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.UsersTable.Location = new System.Drawing.Point(6, 6);
             this.UsersTable.Name = "UsersTable";
-            this.UsersTable.Size = new System.Drawing.Size(978, 400);
+            this.UsersTable.Size = new System.Drawing.Size(978, 494);
             this.UsersTable.TabIndex = 0;
             // 
             // AdminMenu

@@ -35,8 +35,7 @@
 
         public bool isCorrectState()
         {
-            if (string.IsNullOrEmpty(Name) || string.IsNullOrEmpty(Surname) || string.IsNullOrEmpty(Phone) || string.IsNullOrEmpty(Login) ||
-                string.IsNullOrEmpty(Password))
+            if ((string.IsNullOrEmpty(Name) || string.IsNullOrEmpty(Surname) || string.IsNullOrEmpty(Phone) || string.IsNullOrEmpty(Login)))
             {
                 return false;
             }

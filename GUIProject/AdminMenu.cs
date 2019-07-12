@@ -31,6 +31,7 @@ namespace GUIProject
         {
             int selectedBookID = (int)LibraryTable.CurrentRow.Cells[0].Value;
             bookBL.Remove(selectedBookID);
+            MessageBox.Show($"Book № {selectedBookID} succesfully removed from database");
         }
 
         private void AdminMenu_FormClosed(object sender, FormClosedEventArgs e)

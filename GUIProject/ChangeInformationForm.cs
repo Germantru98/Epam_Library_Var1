@@ -38,10 +38,6 @@ namespace GUIProject
                 {
                     _reader.Surname = AtributeTextBox.Text;
                 }
-                if (Atribute == "Phone")
-                {
-                    _reader.Phone = AtributeTextBox.Text;
-                }
                 if (Atribute == "Login")
                 {
                     if (authorization.IsLoginExist(AtributeTextBox.Text))

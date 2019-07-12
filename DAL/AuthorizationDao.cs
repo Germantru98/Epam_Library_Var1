@@ -104,6 +104,34 @@ namespace DAL
             }
         }
 
+        public bool IsPhoneExist(string phone)
+        {
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                var cmd = connection.CreateCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "IsPhoneExist";
+                cmd.Parameters.AddWithValue(@"Phone", phone);
+                var num = new SqlParameter
+                {
+                    DbType = DbType.Int32,
+                    ParameterName = "@Result",
+                    Direction = ParameterDirection.Output
+                };
+                cmd.Parameters.Add(num);
+                connection.Open();
+                cmd.ExecuteNonQuery();
+                if ((int)num.Value == 1)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+
         public string GetPasswordForLogin(string login)
         {
             var password = "";

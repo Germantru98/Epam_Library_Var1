@@ -169,6 +169,7 @@
             // BooksDGV
             // 
             this.BooksDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.BooksDGV.BackgroundColor = System.Drawing.Color.White;
             this.BooksDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.BooksDGV.Location = new System.Drawing.Point(10, 8);
             this.BooksDGV.Margin = new System.Windows.Forms.Padding(4);
@@ -186,7 +187,7 @@
             this.UserLibrary.Margin = new System.Windows.Forms.Padding(4);
             this.UserLibrary.Name = "UserLibrary";
             this.UserLibrary.Padding = new System.Windows.Forms.Padding(4);
-            this.UserLibrary.Size = new System.Drawing.Size(988, 484);
+            this.UserLibrary.Size = new System.Drawing.Size(990, 504);
             this.UserLibrary.TabIndex = 1;
             this.UserLibrary.Text = "My Library";
             this.UserLibrary.UseVisualStyleBackColor = true;
@@ -227,6 +228,7 @@
             // MyLibraryTable
             // 
             this.MyLibraryTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.MyLibraryTable.BackgroundColor = System.Drawing.Color.White;
             this.MyLibraryTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.MyLibraryTable.Location = new System.Drawing.Point(7, 7);
             this.MyLibraryTable.Name = "MyLibraryTable";
@@ -241,7 +243,7 @@
             this.UserProfile.Margin = new System.Windows.Forms.Padding(4);
             this.UserProfile.Name = "UserProfile";
             this.UserProfile.Padding = new System.Windows.Forms.Padding(4);
-            this.UserProfile.Size = new System.Drawing.Size(988, 484);
+            this.UserProfile.Size = new System.Drawing.Size(990, 504);
             this.UserProfile.TabIndex = 2;
             this.UserProfile.Text = "MyProfile";
             this.UserProfile.UseVisualStyleBackColor = true;

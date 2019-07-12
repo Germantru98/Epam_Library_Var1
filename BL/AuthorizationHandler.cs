@@ -114,5 +114,17 @@ namespace BL
             }
             else throw new ArgumentException("Wrong parametr ->password");
         }
+
+        public bool IsPhoneExist(string phone)
+        {
+            if (string.IsNullOrEmpty(phone))
+            {
+                throw new ArgumentException("Wrong parametr ->phone");
+            }
+            else
+            {
+                return authorizationDao.IsLoginExist(phone);
+            }
+        }
     }
 }

@@ -36,6 +36,7 @@ namespace GUIProject
         {
             int selectedBookID = (int)MyLibraryTable.CurrentRow.Cells[0].Value;
             ticketBL.Remove(selectedBookID);
+            MessageBox.Show($"Book № {selectedBookID} succesfully removed from your library");
         }
 
         private void ExtendBookButton_Click(object sender, EventArgs e)
@@ -86,7 +87,7 @@ namespace GUIProject
 
         private void ChangePhoneButton_Click(object sender, EventArgs e)
         {
-            ChangeInformationForm form = new ChangeInformationForm(_reader, "Phone");
+            ChangePhoneNumberForm form = new ChangePhoneNumberForm(_reader);
             form.Show();
         }
 

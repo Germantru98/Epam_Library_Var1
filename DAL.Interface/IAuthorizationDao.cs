@@ -14,6 +14,8 @@ namespace DAL.Interface
 
         bool IsLoginExist(string login);
 
+        bool IsPhoneExist(string phone);
+
         string GetPasswordForLogin(string login);
     }
 }

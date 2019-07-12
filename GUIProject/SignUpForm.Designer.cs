@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.SignUpButton = new System.Windows.Forms.Button();
             this.NameTextBox = new System.Windows.Forms.TextBox();
-            this.PhoneTextBox = new System.Windows.Forms.TextBox();
             this.SurnameTextBox = new System.Windows.Forms.TextBox();
             this.LoginTextBox = new System.Windows.Forms.TextBox();
             this.PasswordTextBox = new System.Windows.Forms.TextBox();
@@ -44,6 +43,7 @@
             this.ConfirmPassTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.EmptyFieldError = new System.Windows.Forms.ErrorProvider(this.components);
+            this.PhoneTextBox = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.EmptyFieldError)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,7 +55,7 @@
             this.SignUpButton.Location = new System.Drawing.Point(175, 411);
             this.SignUpButton.Name = "SignUpButton";
             this.SignUpButton.Size = new System.Drawing.Size(113, 38);
-            this.SignUpButton.TabIndex = 0;
+            this.SignUpButton.TabIndex = 7;
             this.SignUpButton.Text = "Sign Up!";
             this.SignUpButton.UseVisualStyleBackColor = true;
             this.SignUpButton.Click += new System.EventHandler(this.SignUpButton_Click);
@@ -70,16 +70,6 @@
             this.NameTextBox.TabIndex = 1;
             this.NameTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.NameTextBox_Validating);
             // 
-            // PhoneTextBox
-            // 
-            this.PhoneTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.PhoneTextBox.Location = new System.Drawing.Point(120, 199);
-            this.PhoneTextBox.Name = "PhoneTextBox";
-            this.PhoneTextBox.Size = new System.Drawing.Size(242, 20);
-            this.PhoneTextBox.TabIndex = 2;
-            this.PhoneTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.PhoneTextBox_Validating);
-            // 
             // SurnameTextBox
             // 
             this.SurnameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -87,7 +77,7 @@
             this.SurnameTextBox.Location = new System.Drawing.Point(120, 150);
             this.SurnameTextBox.Name = "SurnameTextBox";
             this.SurnameTextBox.Size = new System.Drawing.Size(242, 20);
-            this.SurnameTextBox.TabIndex = 3;
+            this.SurnameTextBox.TabIndex = 2;
             this.SurnameTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.SurnameTextBox_Validating);
             // 
             // LoginTextBox
@@ -189,7 +179,7 @@
             this.ConfirmPassTextBox.Location = new System.Drawing.Point(120, 355);
             this.ConfirmPassTextBox.Name = "ConfirmPassTextBox";
             this.ConfirmPassTextBox.Size = new System.Drawing.Size(242, 20);
-            this.ConfirmPassTextBox.TabIndex = 12;
+            this.ConfirmPassTextBox.TabIndex = 6;
             this.ConfirmPassTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.ConfirmPassTextBox_Validating);
             // 
             // label2
@@ -208,11 +198,20 @@
             // 
             this.EmptyFieldError.ContainerControl = this;
             // 
+            // PhoneTextBox
+            // 
+            this.PhoneTextBox.Location = new System.Drawing.Point(120, 200);
+            this.PhoneTextBox.Mask = "8(999) 000-0000";
+            this.PhoneTextBox.Name = "PhoneTextBox";
+            this.PhoneTextBox.Size = new System.Drawing.Size(242, 20);
+            this.PhoneTextBox.TabIndex = 3;
+            // 
             // SignUpForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 461);
+            this.Controls.Add(this.PhoneTextBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.ConfirmPassTextBox);
             this.Controls.Add(this.label1);
@@ -224,7 +223,6 @@
             this.Controls.Add(this.PasswordTextBox);
             this.Controls.Add(this.LoginTextBox);
             this.Controls.Add(this.SurnameTextBox);
-            this.Controls.Add(this.PhoneTextBox);
             this.Controls.Add(this.NameTextBox);
             this.Controls.Add(this.SignUpButton);
             this.MaximumSize = new System.Drawing.Size(700, 500);
@@ -244,7 +242,6 @@
 
         private System.Windows.Forms.Button SignUpButton;
         private System.Windows.Forms.TextBox NameTextBox;
-        private System.Windows.Forms.TextBox PhoneTextBox;
         private System.Windows.Forms.TextBox SurnameTextBox;
         private System.Windows.Forms.TextBox LoginTextBox;
         private System.Windows.Forms.TextBox PasswordTextBox;
@@ -257,5 +254,6 @@
         private System.Windows.Forms.TextBox ConfirmPassTextBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ErrorProvider EmptyFieldError;
+        private System.Windows.Forms.MaskedTextBox PhoneTextBox;
     }
 }

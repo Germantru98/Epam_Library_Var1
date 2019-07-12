@@ -2,6 +2,7 @@
 using DAL;
 using DAL.Interface;
 using Entities;
+using System;
 
 namespace BL
 {
@@ -11,45 +12,113 @@ namespace BL
 
         public void SetNewPassword(Reader reader, string newPassword)
         {
-            authorizationDao.SetNewPassword(reader, newPassword);
+            if (reader.Reader_ID <= 0)
+            {
+                throw new ArgumentException("Reader parametr -> Reader_ID is negative or zero");
+            }
+            else if (string.IsNullOrEmpty(newPassword))
+            {
+                throw new ArgumentException("Wrong parametr -> newPassword");
+            }
+            else
+            {
+                authorizationDao.SetNewPassword(reader, newPassword);
+            }
+
         }
 
         public void SetNewLogin(Reader reader, string newLogin)
         {
-            authorizationDao.SetNewLogin(reader, newLogin);
+            if (reader.Reader_ID <= 0)
+            {
+                throw new ArgumentException("Reader parametr -> Reader_ID is negative or zero");
+            }
+            else if (string.IsNullOrEmpty(newLogin))
+            {
+                throw new ArgumentException("Wrong parametr -> newLogin");
+            }
+            else
+            {
+                authorizationDao.SetNewLogin(reader, newLogin);
+            }
+
         }
 
         public string GetLogin(Reader reader)
         {
-            return authorizationDao.GetLogin(reader);
+            if (reader.Reader_ID > 0)
+            {
+                return authorizationDao.GetLogin(reader);
+            }
+            else
+            {
+                throw new ArgumentException("Reader parametr -> Reader_ID is negative or zero");
+            }
+
         }
 
         public string GetPassword(Reader reader)
         {
-            return authorizationDao.GetPassword(reader);
+            if (reader.Reader_ID > 0)
+            {
+                return authorizationDao.GetPassword(reader);
+            }
+            else
+            {
+                throw new ArgumentException("Reader parametr -> Reader_ID is negative or zero");
+            }
+
         }
 
         public bool IsLoginExist(string login)
         {
-            return authorizationDao.IsLoginExist(login);
+            if (string.IsNullOrEmpty(login))
+            {
+                throw new ArgumentException("Wrong parametr ->login");
+            }
+            else
+            {
+                return authorizationDao.IsLoginExist(login);
+            }
+
         }
 
         public string GetPasswordForLogin(string login)
         {
-            return authorizationDao.GetPasswordForLogin(login);
+            if (string.IsNullOrEmpty(login))
+            {
+                throw new ArgumentException("Wrong parametr ->login");
+            }
+            else
+            {
+                return authorizationDao.GetPasswordForLogin(login);
+            }
         }
 
         public bool isAuthorized(string login, string password)
         {
-            string realpassword = GetPasswordForLogin(login);
-            if (password == realpassword)
+            if (!string.IsNullOrEmpty(password))
             {
-                return true;
+                string realpassword = "";
+                try
+                {
+                    realpassword = GetPasswordForLogin(login);
+                }
+                catch (ArgumentException)
+                {
+                    throw new ArgumentException("Wrong parametr ->login");
+                }
+                if (password == realpassword)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
-            else
-            {
-                return false;
-            }
+            else throw new ArgumentException("Wrong parametr ->password");
+
         }
     }
 }

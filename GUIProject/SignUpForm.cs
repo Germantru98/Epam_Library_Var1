@@ -25,10 +25,17 @@ namespace GUIProject
             {
                 if (PasswordTextBox.Text == ConfirmPassTextBox.Text)
                 {
-                    Reader reader = new Reader(NameTextBox.Text, SurnameTextBox.Text, PhoneTextBox.Text, LoginTextBox.Text, PasswordTextBox.Text);
-                    readerBL.Add(reader);
-                    MessageBox.Show("Registration completed");
-                    Close();
+                    if (PhoneTextBox.MaskCompleted)
+                    {
+                        Reader reader = new Reader(NameTextBox.Text, SurnameTextBox.Text, PhoneTextBox.Text, LoginTextBox.Text, PasswordTextBox.Text);
+                        readerBL.Add(reader);
+                        MessageBox.Show("Registration completed");
+                        Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Check phone number");
+                    }
                 }
                 else
                 {
@@ -67,7 +74,7 @@ namespace GUIProject
 
         private void PhoneTextBox_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            if (String.IsNullOrEmpty(PhoneTextBox.Text))
+            if (!PhoneTextBox.MaskCompleted)
             {
                 EmptyFieldError.SetError(PhoneTextBox, "This field cant be empty!");
             }

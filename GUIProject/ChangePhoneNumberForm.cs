@@ -19,7 +19,7 @@ namespace GUIProject
 
         private void AcceptButton_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(PhoneTextBox.Text))
+            if (!PhoneTextBox.MaskCompleted)
             {
                 MessageBox.Show("Fill in new phone number");
             }
@@ -29,6 +29,18 @@ namespace GUIProject
                 readerBL.Update(_reader);
                 MessageBox.Show("Number succesfully changed");
                 Close();
+            }
+        }
+
+        private void PhoneTextBox_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(PhoneTextBox.Text))
+            {
+                EmptyFieldError.SetError(PhoneTextBox, "This field cant be empty!");
+            }
+            else
+            {
+                EmptyFieldError.Clear();
             }
         }
     }

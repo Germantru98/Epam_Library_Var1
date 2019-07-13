@@ -28,9 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.PhoneTextBox = new System.Windows.Forms.MaskedTextBox();
             this.AcceptButton = new System.Windows.Forms.Button();
             this.AtributeLable = new System.Windows.Forms.Label();
+            this.EmptyFieldError = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.EmptyFieldError)).BeginInit();
             this.SuspendLayout();
             // 
             // PhoneTextBox
@@ -43,6 +46,7 @@
             this.PhoneTextBox.Name = "PhoneTextBox";
             this.PhoneTextBox.Size = new System.Drawing.Size(182, 24);
             this.PhoneTextBox.TabIndex = 0;
+            this.PhoneTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.PhoneTextBox_Validating);
             // 
             // AcceptButton
             // 
@@ -68,6 +72,10 @@
             this.AtributeLable.TabIndex = 3;
             this.AtributeLable.Text = "Change Phone";
             // 
+            // EmptyFieldError
+            // 
+            this.EmptyFieldError.ContainerControl = this;
+            // 
             // ChangePhoneNumberForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -79,6 +87,7 @@
             this.Name = "ChangePhoneNumberForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ChangePhone";
+            ((System.ComponentModel.ISupportInitialize)(this.EmptyFieldError)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -89,5 +98,6 @@
         private System.Windows.Forms.MaskedTextBox PhoneTextBox;
         private System.Windows.Forms.Button AcceptButton;
         private System.Windows.Forms.Label AtributeLable;
+        private System.Windows.Forms.ErrorProvider EmptyFieldError;
     }
 }

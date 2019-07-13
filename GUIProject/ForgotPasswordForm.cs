@@ -33,9 +33,9 @@ namespace GUIProject
 
         private void PhoneTextBox_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            if (string.IsNullOrEmpty(PhoneTextBox.Text))
+            if (!PhoneTextBox.MaskCompleted)
             {
-                ErrorIcon.SetError(PhoneTextBox, "This field cant be empty!");
+                ErrorIcon.SetError(PhoneTextBox, "Wrong phone number");
             }
             else if (!authorization.IsPhoneExist(PhoneTextBox.Text))
             {
@@ -85,23 +85,30 @@ namespace GUIProject
         {
             if (isFieldsCorrect())
             {
-                Reader reader = readerBL.GetReaderByLogin(LoginTextBox.Text);
-                if (reader.Phone == PhoneTextBox.Text)
+                if (PhoneTextBox.MaskCompleted)
                 {
-                    if (NewPasswordTextBox.Text == ConfirmPassTextBox.Text)
+                    Reader reader = readerBL.GetReaderByLogin(LoginTextBox.Text);
+                    if (reader.Phone == PhoneTextBox.Text)
                     {
-                        authorization.SetNewPassword(reader, NewPasswordTextBox.Text);
-                        MessageBox.Show("Password changed, try to sign in");
-                        Close();
+                        if (NewPasswordTextBox.Text == ConfirmPassTextBox.Text)
+                        {
+                            authorization.SetNewPassword(reader, NewPasswordTextBox.Text);
+                            MessageBox.Show("Password changed, try to sign in");
+                            Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Passwords do not match");
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Passwords do not match");
+                        MessageBox.Show("User with this login has a different phone number");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("User with this login has a different phone number");
+                    MessageBox.Show("Wrong phone number");
                 }
             }
             else

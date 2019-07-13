@@ -102,7 +102,6 @@
             this.PasswordTextBox.Name = "PasswordTextBox";
             this.PasswordTextBox.Size = new System.Drawing.Size(242, 24);
             this.PasswordTextBox.TabIndex = 5;
-            this.PasswordTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.PasswordTextBox_Validating);
             // 
             // NameLable
             // 
@@ -211,6 +210,7 @@
             this.PhoneTextBox.Name = "PhoneTextBox";
             this.PhoneTextBox.Size = new System.Drawing.Size(242, 24);
             this.PhoneTextBox.TabIndex = 3;
+            this.PhoneTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.PhoneTextBox_Validating);
             // 
             // SignUpForm
             // 

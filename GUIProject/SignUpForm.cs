@@ -72,17 +72,8 @@ namespace GUIProject
             }
         }
 
-        private void PhoneTextBox_Validating(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            if (!PhoneTextBox.MaskCompleted)
-            {
-                EmptyFieldError.SetError(PhoneTextBox, "This field cant be empty!");
-            }
-            else
-            {
-                EmptyFieldError.Clear();
-            }
-        }
+
+
 
         private void LoginTextBox_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
@@ -96,17 +87,7 @@ namespace GUIProject
             }
         }
 
-        private void PasswordTextBox_Validating(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            if (String.IsNullOrEmpty(PasswordTextBox.Text))
-            {
-                EmptyFieldError.SetError(PasswordTextBox, "This field cant be empty!");
-            }
-            else
-            {
-                EmptyFieldError.Clear();
-            }
-        }
+        
 
         private void ConfirmPassTextBox_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
@@ -141,6 +122,18 @@ namespace GUIProject
             else
             {
                 return false;
+            }
+        }
+
+        private void PhoneTextBox_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (!PhoneTextBox.MaskCompleted)
+            {
+                EmptyFieldError.SetError(PhoneTextBox, "Check phone number");
+            }
+            else
+            {
+                EmptyFieldError.Clear();
             }
         }
     }

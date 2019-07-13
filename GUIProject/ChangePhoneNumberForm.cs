@@ -34,7 +34,7 @@ namespace GUIProject
 
         private void PhoneTextBox_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            if (string.IsNullOrEmpty(PhoneTextBox.Text))
+            if (!PhoneTextBox.MaskCompleted)
             {
                 EmptyFieldError.SetError(PhoneTextBox, "This field cant be empty!");
             }

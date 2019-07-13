@@ -46,7 +46,7 @@
             // PhoneTextBox
             // 
             this.PhoneTextBox.Location = new System.Drawing.Point(51, 163);
-            this.PhoneTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PhoneTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.PhoneTextBox.Mask = "8(999) 000-0000";
             this.PhoneTextBox.Name = "PhoneTextBox";
             this.PhoneTextBox.Size = new System.Drawing.Size(148, 24);
@@ -161,7 +161,7 @@
             this.Controls.Add(this.PhoneTextBox);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ForgotPasswordForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ForgotPassword";

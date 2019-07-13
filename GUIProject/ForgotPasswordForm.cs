@@ -31,21 +31,7 @@ namespace GUIProject
             }
         }
 
-        private void PhoneTextBox_Validating(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            if (!PhoneTextBox.MaskCompleted)
-            {
-                ErrorIcon.SetError(PhoneTextBox, "Wrong phone number");
-            }
-            else if (!authorization.IsPhoneExist(PhoneTextBox.Text))
-            {
-                ErrorIcon.SetError(PhoneTextBox, "Phone is not exists");
-            }
-            else
-            {
-                ErrorIcon.Clear();
-            }
-        }
+
 
         private void NewPasswordTextBox_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
@@ -130,6 +116,22 @@ namespace GUIProject
             else
             {
                 return true;
+            }
+        }
+
+        private void PhoneTextBox_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (!PhoneTextBox.MaskCompleted)
+            {
+                ErrorIcon.SetError(PhoneTextBox, "Wrong phone number");
+            }
+            else if (!authorization.IsPhoneExist(PhoneTextBox.Text))
+            {
+                ErrorIcon.SetError(PhoneTextBox, "Phone is not exists");
+            }
+            else
+            {
+                ErrorIcon.Clear();
             }
         }
     }
